@@ -1,0 +1,10 @@
+decided 2700 for both GC and his own
+old front template, forum, admin template, new front template
+
+
+GRANDEUR CAPITAL
+Development Cost: 1500
+admin templatee: 30
+front template: 16
+Forums Template: 60
+extra front development cost: 300

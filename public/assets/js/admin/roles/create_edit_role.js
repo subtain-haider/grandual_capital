@@ -1,0 +1,1 @@
+(()=>{"use strict";$("#createRoleForm").on("submit",(function(t){return t.preventDefault(),jQuery(this).find("#btnCreateRole").button("loading"),$("#createRoleForm")[0].submit(),!0})),$("#editRoleForm").on("submit",(function(t){return t.preventDefault(),jQuery(this).find("#btnEditSave").button("loading"),$("#editRoleForm")[0].submit(),!0}))})();

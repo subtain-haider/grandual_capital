@@ -116,7 +116,7 @@ class UserSubscriptionController extends Controller
 
         $user->update([
             'p_subscription_id' => $subscription_id,
-            'expires_at' => $expires_at->format('Y-m-d')
+            'expires_at' => $expires_at->format('Y.m.d')
         ]);
         $user->accounts()->delete();
 

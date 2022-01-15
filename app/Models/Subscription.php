@@ -10,9 +10,9 @@ class Subscription extends Model
     use HasFactory;
     protected $table = 'p_subscriptions';
 
-    public function user()
+    public function users()
     {
-        return $this->hasOne(User::class);
+        return $this->hasMany(User::class, 'p_subscription_id');
     }
 
     public function accounts()

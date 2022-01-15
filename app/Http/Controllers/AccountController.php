@@ -23,21 +23,12 @@ class AccountController extends Controller
     }
     public function user_accounts_post(Request $request)
     {
-        $file = public_path('/')."/accountDetail.key";
         $account = Account::find($request->account_id);
-        $txt = $account->account.':GrandeurCapital'.'@'.date('Y.m.d').'.'.$account->user->email;
-        if( strpos(file_get_contents("$file"),$txt) !== false) {
-            // do stuff
-            $new_txt = $request->account.':GrandeurCapital'.'@'.date('Y.m.d').'.'.$account->user->email;
-            file_put_contents($file,str_replace($txt,$new_txt,file_get_contents($file)));
-        }else{
-            $file_content = file_get_contents($file);
-            $txt = $file_content."\n" . $request->account.':GrandeurCapital'.'@'.date('Y.m.d').'.'.$account->user->email;
-            file_put_contents($file,$txt);
-        }
         $account->update([
             'account' => $request->account
         ]);
+        $accounts = Account::all();
+        account_key_file($accounts);
         return back()->with('success', 'Account number updated successfully.');
     }
 

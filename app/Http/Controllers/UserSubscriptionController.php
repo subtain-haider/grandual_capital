@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use App\Models\Affiliation;
 use App\Models\Subscription;
 use App\Models\User;
@@ -115,7 +116,7 @@ class UserSubscriptionController extends Controller
 
         $user->update([
             'p_subscription_id' => $subscription_id,
-            'expires_at' => $expires_at->format('Y.m.d')
+            'expires_at' => $expires_at->format('Y-m-d')
         ]);
         $user->accounts()->delete();
 
@@ -126,6 +127,8 @@ class UserSubscriptionController extends Controller
                 'subscription_id' => $subscription_id
             ]);
         }
+        $accounts = Account::all();
+        account_key_file($accounts);
 
         return back()->with('success', 'Subscription bought successfully.');
     }

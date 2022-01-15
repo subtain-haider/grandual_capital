@@ -95,6 +95,30 @@ class SubscriptionController extends Controller
         
         // dd("ok");
         $subscription = Subscription::where('id',$id)->first();
+        if ($subscription->account != $request->account){
+            $users = $subscription->users;
+            foreach ($users as $user){
+                $accounts = $user->accounts;
+                if (count($accounts) > $request->account){
+                    $sliced= count($accounts) - $request->account;
+                    $del_accounts = $accounts->slice(0,$sliced);
+                    foreach ($del_accounts as $del){
+                        $del->delete();
+                    }
+                }elseif (count($accounts) < $request->account){
+                    $difference = $request->account - count($accounts) ;
+                    for ($x=1; $x<=$difference; $x++){
+                        $user->accounts()->create([
+                            'number' => $x,
+                            'subscription_id' => $user->p_subscription_id
+                        ]);
+                    }
+                }
+            }
+            $accounts = Account::all();
+            account_key_file($accounts);
+            $subscription->account = $request->account;
+        }
         if($request->file('image')) {
             $image_path = public_path('/').'/'.$subscription->image;
 //            if (file_exists($image_path)) {
@@ -112,9 +136,11 @@ class SubscriptionController extends Controller
         $subscription->p_subscription = $request->p_subscription;
         $subscription->status = $request->status;
         $subscription->affiliate = $request->affiliate;
-        $subscription->account = $request->account;
-        
+
+
+
         $subscription->save();
+
         return redirect('admin/subscription');
     }
 

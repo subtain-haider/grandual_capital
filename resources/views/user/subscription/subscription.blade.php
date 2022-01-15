@@ -45,19 +45,22 @@
                                         <h5 class="title">{{$subscription->name}} Month</h5>
                                     </div>
                                     <div class="pricing-amount">
-                                        <div class="amount">${{$subscription->price}}</div>
+                                        <div class="amount">
+                                            <p>First Month: ${{$subscription->price}}</p>
+                                            <p>Recurring Amount: ${{$subscription->r_fee}}</p>
+                                        </div>
                                         <span class="bill">{{$subscription->desc}}</span>
                                     </div>
                                     <div class="pricing-action">
-                                        @if($user->subscription_id == $subscription->id)
+                                        @if($user->p_subscription_id == $subscription->id)
                                             <a class="btn btn-success  " >Current Subscription</a>
                                         @else
                                         @if($settings->p_status)
 {{--                                            <a  target="_blank" href="/paypal_modal/{{$subscription->id}}" class="btn btn-primary mt-3">Paypal</a>--}}
-                                            <a href="/user/subscribe/{{$user->id}}/{{$subscription->id}}" class="btn btn-lg btn-success">Paypal</a>
+                                            <a href="/user/subscribe/{{$user->id}}/{{$subscription->id}}" class="btn btn-primary mt-3">Paypal ${{$subscription->price}}</a>
                                         @endif
                                         @if($settings->s_status)
-                                            <button class="btn btn-primary mt-3" onclick="stripe_fnc({{$subscription->id}})" id="checkout-button" data-id="{{$subscription->id}}">Stripe</button>
+                                            <button class="btn btn-primary mt-3" onclick="stripe_fnc({{$subscription->id}})" id="checkout-button" data-id="{{$subscription->id}}">Stripe ${{$subscription->price}}</button>
                                         @endif
                                         @if($settings->b_status)
                                         <button href="/user/subscribe/{{$user->id}}/{{$subscription->id}}" class="btn btn-primary cryptochill-button  mt-3"

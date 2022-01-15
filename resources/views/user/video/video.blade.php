@@ -3,6 +3,7 @@
 @section('content')
 @php
  use App\Models\Category;
+$user = Auth::user();
 
 @endphp
 <!-- content @s -->
@@ -19,6 +20,9 @@
                      
                   </div><!-- .nk-block-between -->
               </div><!-- .nk-block-head -->
+              @if(empty($user->p_subscription))
+                  <h2>Please Purchase any Subscription</h2>
+              @else
               <div class="nk-block">
                   <div class="row g-gs">
                       <div class="col-xxl-12">
@@ -43,7 +47,7 @@
                                               <div class="col-3">
                                                   <div class="card">
                                                       <div class="card-body">
-                                                          <video style="width: 100%;  min-height:240px" controls controlsList="nodownload">
+                                                          <video style="width: 100%;  min-height:240px" height="240" controls controlsList="nodownload">
                                                               <source src="{{url('/') .'/'.$video->video_link}}" type="video/mp4">
                                                           </video>
                                                           <h5 class="card-title mt-2">{{$video->video_title}}</h5>
@@ -135,10 +139,12 @@
 
 
               </div><!-- .nk-block -->
+              @endif
           </div>
       </div>
   </div>
 </div>
 
 
-<!-- content @e --
+<!-- content @e -->
+@endsection

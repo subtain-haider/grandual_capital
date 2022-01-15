@@ -43,7 +43,7 @@
                                     <form id="TypeValidation" class="form-horizontal" action="/user/accounts" method="POST" enctype="multipart/form-data" novalidate="novalidate">
                                         @csrf
                                               <div class="form-group col-md-12">
-                                                  <label class="form-label" for="product-name-en">Account Number {{$account->number}} </label>
+                                                  <label class="form-label" for="product-name-en">Account Number </label>
                                                   <div class="form-control-wrap">
                                                       <input  class="form-control" type="number" name="account" value="{{$account->account}}" required="true" aria-required="true" aria-invalid="false" required>
                                                       <input type="hidden" name="account_id" value="{{$account->id}}" required="true">

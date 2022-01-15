@@ -40,6 +40,10 @@
                           </li>
                       </ul><!-- .nk-menu-sub -->
                   </li><!-- .nk-menu-item -->
+                  @php
+                    $auth_user = Auth::user();
+                  @endphp
+                  @if($auth_user->p_subscription->affiliate == 'Yes')
                   <li class="nk-menu-item has-sub">
                       <a href="{{url('user/withdraws')}}" class="nk-menu-link nk-menu-toggle">
                           <span class="nk-menu-icon"><em class="icon ni ni-tile-thumb-fill"></em></span>
@@ -54,17 +58,18 @@
                           </li>
                       </ul><!-- .nk-menu-sub -->
                   </li><!-- .nk-menu-item -->
+                  @endif
 
                   <li class="nk-menu-item">
                       <a href="{{url('user/product')}}" class="nk-menu-link">
                           <span class="nk-menu-icon"><em class="icon ni ni-menu-circled"></em></span>
-                          <span class="nk-menu-text">Library</span>
+                          <span class="nk-menu-text">Software Library</span>
                       </a>
                   </li><!-- .nk-menu-item -->
                   <li class="nk-menu-item">
                       <a href="{{url('user/video')}}" class="nk-menu-link">
                           <span class="nk-menu-icon"><em class="icon ni ni-menu-circled"></em></span>
-                          <span class="nk-menu-text">Videos</span>
+                          <span class="nk-menu-text">Video Library</span>
                       </a>
                   </li><!-- .nk-menu-item -->
 
@@ -84,13 +89,13 @@
                   <li class="nk-menu-item">
                       <a href="{{url('group_chat')}}" class="nk-menu-link">
                           <span class="nk-menu-icon"><em class="icon ni ni-user-check-fill"></em></span>
-                          <span class="nk-menu-text">Conversations</span>
+                          <span class="nk-menu-text">Group Chat</span>
                       </a>
                   </li>
                   <li class="nk-menu-item">
                       <a href="{{url('group_meetings')}}" class="nk-menu-link">
                           <span class="nk-menu-icon"><em class="icon ni ni-user-check-fill"></em></span>
-                          <span class="nk-menu-text">Meetings</span>
+                          <span class="nk-menu-text">Live Trading Room</span>
                       </a>
                   </li>
               </ul><!-- .nk-menu -->

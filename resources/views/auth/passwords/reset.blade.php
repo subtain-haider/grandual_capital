@@ -1,4 +1,7 @@
-@extends('layouts.app')
+@php
+    $layout = \App\Models\Front::first()->layout;
+@endphp
+@extends('layouts.'.$layout)
 
 @section('content')
 <div class="container">

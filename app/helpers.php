@@ -309,3 +309,14 @@ function getNotificationSound()
     
     return $notification_sound;
 }
+function account_key_file($accounts){
+    $txt = '';
+    foreach ($accounts as $account){
+        if (!empty($account->account)){
+            $txt = $txt. "\n". $account->account.':GrandeurCapital'.'@'.$account->user->expires_at.'.'.$account->user->email;
+        }
+    }
+    $myfile = fopen(public_path('/')."/accountDetail.key", "w") or die("Unable to open file!");
+    fwrite($myfile, $txt);
+    fclose($myfile);
+}

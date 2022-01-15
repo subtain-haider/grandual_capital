@@ -149,25 +149,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'phone',
-        'last_seen',
-        'is_online',
-        'about',
-        'photo_url',
-        'activation_code',
-        'is_active',
-        'is_system',
-        'email_verified_at',
-        'player_id',
-        'is_subscribed',
-        'gender',
-        'privacy',
-        'language',
-    ];
+    protected $guarded = [];
 
     const LANGUAGES = [
         'en' => 'English',

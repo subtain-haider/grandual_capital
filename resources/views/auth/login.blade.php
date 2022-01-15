@@ -36,6 +36,7 @@
                         </div>
                         <div class="mb-3 form-check">
                             <label class="form-check-label" for="exampleCheck1">Do not have an account? <a href="/register"><u>Sign up</u></a></label>
+                            <label class="form-check-label float-right" > <a href="/password/reset"><u>Forgot Password</u></a></label>
                         </div>
                         <button type="submit" class="btn btn-primary m-auto">Login</button>
                     </form>

@@ -55,7 +55,7 @@ class HomeController extends Controller
     public function userDashboard()
     {
         $user = Auth::user();
-        $affiliations = User::where('ref_by', $user->ref_id)->get();
+        $affiliations = User::where('ref_by', $user->ref_id)->where('ref_by', '!=','')->get();
         return view('dashboard', compact('user', 'affiliations'));
     }
 

@@ -43,6 +43,7 @@
                   @php
                     $auth_user = Auth::user();
                   @endphp
+                  @if($auth_user->p_subscription)
                   @if($auth_user->p_subscription->affiliate == 'Yes')
                   <li class="nk-menu-item has-sub">
                       <a href="{{url('user/withdraws')}}" class="nk-menu-link nk-menu-toggle">
@@ -58,6 +59,7 @@
                           </li>
                       </ul><!-- .nk-menu-sub -->
                   </li><!-- .nk-menu-item -->
+                  @endif
                   @endif
 
                   <li class="nk-menu-item">

@@ -39,6 +39,7 @@
                                     </thead>
                                     <tbody>
                                         @foreach ($accounts as $account)
+                                            @if(!empty($account->account))
                                         <tr class="nk-tb-item odd">
                                             <td class="nk-tb-col"><span class="tb-sub">{{$loop->index + 1}}</span></td>
                                             <td class="nk-tb-col"><span class="tb-lead"><span class="title">{{$account->account}}</span></span></td>
@@ -47,7 +48,8 @@
                                             <td class="nk-tb-col"><span class="tb-sub"><span class="title">{{$account->user->expires_at}}</span></span></td> 
                                             <td class="nk-tb-col"><span class="tb-sub"><span class="title">{{$account->account}}:GrandeurCapital{{'@'.$account->user->expires_at}}.{{$account->user->email}}</span></span></td>
                                             
-                                         </tr>  
+                                         </tr>
+                                        @endif
                                        @endforeach
                                         
                                     </tbody>

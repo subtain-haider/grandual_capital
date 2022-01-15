@@ -20,6 +20,17 @@
 <script src="{{asset('admin/assets/js/bundle.js?ver=2.9.0')}}"></script>
 <script src="{{asset('admin/assets/js/scripts.js?ver=2.9.0')}}"></script>
 <script src="{{asset('admin/assets/js/charts/chart-ecommerce.js?ver=2.9.0')}}"></script>
+
+<script>
+    $( ".trigger" ).change(function() {
+        if (this.value == 'Bitcoin'){
+            $(".target_text").html('Bitcoin Wallet Address')
+        }else{
+            $(".target_text").html(this.value + ' email')
+        }
+
+    });
+</script>
 </body>
 
 </html>

@@ -29,7 +29,7 @@
                                                     <tr class="nk-tb-item nk-tb-head" role="row">
                                                         <th class="nk-tb-col sorting" ><span>ID</span></th>
                                                         <th class="nk-tb-col  sorting" ><span>Amount</span></th>
-                                                        <th class="nk-tb-col  sorting" ><span>Acount</span></th>
+                                                        <th class="nk-tb-col  sorting" ><span>Account</span></th>
                                                         <th class="nk-tb-col  sorting" ><span>Type</span></th>
                                                         <th class="nk-tb-col  sorting" ><span>Note</span></th>
                                                         <th class="nk-tb-col  sorting" ><span>Status</span></th>

@@ -43,7 +43,7 @@
                                                         <label class="form-label" for="default-06">Type</label>
                                                         <div class="form-control-wrap ">
                                                             <div class="form-control-select">
-                                                                <select class="form-control" title="Single Select" name="type" required>
+                                                                <select class="form-control trigger" title="Single Select" name="type" required>
                                                                     <option value="" disabled selected>Select Type</option>
                                                                     @foreach ($type as $pay)
                                                                     <option value="{{$pay->name}}">{{$pay->name}}</option>
@@ -60,9 +60,9 @@
                                                     </div>
             
                                                     <div class="form-group col-md-6">
-                                                        <label class="form-label " >Bitcoin Wallet or Paypal Email or Stripe Email</label>
+                                                        <label class="form-label target_text" >Bitcoin Wallet or Paypal Email or Stripe Email</label>
                                                         <div class="form-control-wrap">
-                                                            <input type="text" class="form-control" name="account"   placeholder="Bitcoin Wallet or Paypal Email or Stripe Email"  required>
+                                                            <input type="text" class="form-control" name="account"   required>
                                                         </div>
                                                     </div>
                                                         

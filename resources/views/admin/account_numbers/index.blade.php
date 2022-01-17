@@ -34,7 +34,8 @@
                                             <th class="nk-tb-col  sorting" ><span>Subscription</span></th>
                                             <th class="nk-tb-col  sorting" ><span>Expire At</span></th>
                                             <th class="nk-tb-col  sorting" ><span>Complete code</span></th>
-                                            
+                                            <th class="nk-tb-col  sorting" ><span>Action</span></th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -47,7 +48,8 @@
                                             <td class="nk-tb-col"><span class="tb-sub"><span class="title"> {{$account->subscription->name}} Month</span></span></td>
                                             <td class="nk-tb-col"><span class="tb-sub"><span class="title">{{$account->user->expires_at}}</span></span></td> 
                                             <td class="nk-tb-col"><span class="tb-sub"><span class="title">{{$account->account}}:GrandeurCapital{{'@'.$account->user->expires_at}}.{{$account->user->email}}</span></span></td>
-                                            
+                                            <td class="nk-tb-col"><span class="tb-sub"><a href="{{url('admin/account/edit',$account->id)}}"  class="btn btn-success btn-sm edit-shop-btn">Edit</a></span></td>
+
                                          </tr>
                                         @endif
                                        @endforeach

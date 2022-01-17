@@ -122,6 +122,8 @@ Route::get('/group_chat', [HomeController::class, 'group_chat']);
 Route::get('/group_meetings', [HomeController::class, 'group_meetings']);
 
 Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
+    Route::get('account/edit/{id}', [AccountController::class, 'admin_account_edit']);
+    Route::post('account/update', [AccountController::class, 'admin_account_update']);
     Route::get('withdraws', [WithdrawController::class, 'admin_withdraws'])->name('admin_withdraws');
     Route::get('withdraw_approve/{id}', [WithdrawController::class, 'withdraw_approve'])->name('withdraw_approve');
     Route::get('withdraw_reject/{id}', [WithdrawController::class, 'withdraw_reject'])->name('withdraw_reject');

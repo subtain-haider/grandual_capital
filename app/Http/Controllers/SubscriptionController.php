@@ -100,8 +100,7 @@ class SubscriptionController extends Controller
             foreach ($users as $user){
                 $accounts = $user->accounts;
                 if (count($accounts) > $request->account){
-                    $sliced= count($accounts) - $request->account;
-                    $del_accounts = $accounts->slice(0,$sliced);
+                    $del_accounts = $accounts->slice($request->account);
                     foreach ($del_accounts as $del){
                         $del->delete();
                     }

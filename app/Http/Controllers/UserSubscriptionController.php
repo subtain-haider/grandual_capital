@@ -118,15 +118,25 @@ class UserSubscriptionController extends Controller
             'p_subscription_id' => $subscription_id,
             'expires_at' => $expires_at->format('Y.m.d')
         ]);
-        $user->accounts()->delete();
-
-
-        for ($x=1; $x<=$subscription->account; $x++){
-            $user->accounts()->create([
-                'number' => $x,
-                'subscription_id' => $subscription_id
-            ]);
+//        $user->accounts()->delete();
+        $subscription_accounts = $subscription->account;
+        $user_accounts = count($user->accounts);
+        if ($user_accounts < $subscription_accounts){
+        $difference = $subscription_accounts - $user_accounts ;
+            for ($x=1; $x<=$difference; $x++){
+                $user->accounts()->create([
+                    'number' => $x,
+                    'subscription_id' => $user->p_subscription_id
+                ]);
+            }
+        }elseif ($user_accounts > $subscription_accounts){
+            $del_accounts = $user->accounts->slice($subscription_accounts);
+            foreach ($del_accounts as $del){
+                $del->delete();
+            }
         }
+
+
         $accounts = Account::all();
         account_key_file($accounts);
 

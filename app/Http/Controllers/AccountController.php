@@ -31,5 +31,18 @@ class AccountController extends Controller
         account_key_file($accounts);
         return back()->with('success', 'Account number updated successfully.');
     }
+    public  function admin_account_edit($id){
+        $account = Account::find($id);
+        return view('admin.account_numbers.edit',compact('account'));
+    }
+    public function admin_account_update(Request $request){
+        $account = Account::find($request->account_id);
+        $account->update([
+            'account' => $request->account
+        ]);
+        $accounts = Account::all();
+        account_key_file($accounts);
+        return redirect('/admin/admin_accounts');
+    }
 
 }

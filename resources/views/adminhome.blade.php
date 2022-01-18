@@ -27,7 +27,7 @@
                                       </div>
                                       <div class="data">
                                           <div class="data-group">
-                                              <div class="amount"> Totol: {{$users}}</div>
+                                              <div class="amount"> Total: {{$users}}</div>
                                               <div class="nk-ecwg6-ck" style="height:90px !important">
                                                   <div class="preview-icon-wrap">
                                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
@@ -68,7 +68,7 @@
                                       </div>
                                       <div class="data">
                                           <div class="data-group">
-                                              <div class="amount"> Totol: {{$subscriptions}}</div>
+                                              <div class="amount"> Total: {{$subscriptions}}</div>
                                               <div class="nk-ecwg6-ck" style="height:90px !important">
                                                   <div class="preview-icon-wrap">
                                                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 113.9">

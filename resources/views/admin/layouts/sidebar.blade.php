@@ -75,7 +75,7 @@
                     <li class="nk-menu-item has-sub">
                         <a href="#" class="nk-menu-link nk-menu-toggle">
                             <span class="nk-menu-icon"><em class="icon ni ni-grid-alt-fill"></em></span>
-                            <span class="nk-menu-text">Category</span>
+                            <span class="nk-menu-text">Product Category</span>
                         </a>
                         <ul class="nk-menu-sub">
                             <li class="nk-menu-item">
@@ -167,13 +167,13 @@
                     <li class="nk-menu-item">
                         <a href="{{url('group_chat')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-user-check-fill"></em></span>
-                            <span class="nk-menu-text">Conversations</span>
+                            <span class="nk-menu-text">Group Chat</span>
                         </a>
                     </li>
                     <li class="nk-menu-item">
                         <a href="{{url('group_meetings')}}" class="nk-menu-link">
                             <span class="nk-menu-icon"><em class="icon ni ni-user-check-fill"></em></span>
-                            <span class="nk-menu-text">Meetings</span>
+                            <span class="nk-menu-text">Live Trading Room</span>
                         </a>
                     </li>
                 </ul><!-- .nk-menu -->

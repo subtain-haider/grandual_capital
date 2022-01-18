@@ -12,7 +12,7 @@
     <section class="home-banner parallax" id="banner" >
         <div class="container">
             <div class="row">
-                <div class="col-4 m-auto">
+                <div class="col-12 col-md4 m-auto">
                     <form method="POST" action="{{ route('login') }}" id="frmLogin" class="sky-form">
                         @csrf
                         <div class="mb-3">

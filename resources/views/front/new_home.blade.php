@@ -1380,11 +1380,11 @@
 
                     <div class="soft-m-subs position-relative">
 
-                        <form action="#" method="post">
+                        <form action="https://grandeurcapital.us20.list-manage.com/subscribe/post?u=c96e7ef1f5e9de98de7083525&amp;id=61fb9477e6" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
 
-                            <input type="email" name="email" placeholder="Enter email address.">
+                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
 
-                            <button>Subscribe Now</button>
+                            <button type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe">Subscribe Now</button>
 
                         </form>
 

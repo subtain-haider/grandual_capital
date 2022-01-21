@@ -1,5 +1,5 @@
 <div id="paypal-button-container-{{$p_subscription}}"></div>
-<script src="https://www.paypal.com/sdk/js?client-id=Ab8WywhFsL0kn4h75c_L2E6bG8nHBCN7hwNlsEy0jPWJc4AuHW-8pAaFvxg6WU6tV7zBAqimnO03VMnX&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script src="https://www.paypal.com/sdk/js?client-id={{$setting->p_client}}&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
 <script>
     paypal.Buttons({
         style: {

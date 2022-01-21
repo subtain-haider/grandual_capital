@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Account;
+use App\Models\Settings;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
 
@@ -160,6 +161,7 @@ class SubscriptionController extends Controller
     public function paypal_modal($subscription_id){
         $subscription = Subscription::find($subscription_id);
         $p_subscription = $subscription->p_subscription;
-        return view('admin.subscription.paypal',compact('p_subscription'));
+        $setting = Settings::first();
+        return view('admin.subscription.paypal',compact('p_subscription', 'setting'));
     }
 }

@@ -65,7 +65,7 @@
                                                   <div class="form-group col-md-6">
                                                       <label class="form-label" >Paypal Subscription ID  </label>
                                                       <div class="form-control-wrap">
-                                                          <input type="text" name="p_subscription" required="true" aria-required="true" aria-invalid="false" class="form-control"  placeholder=" Number of keys "  required> 
+                                                          <input type="text" name="p_subscription" required="true" aria-required="true" aria-invalid="false" class="form-control"  placeholder=" Number of keys "  required>
                                                       </div>
                                                   </div>
 

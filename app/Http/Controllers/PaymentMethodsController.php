@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Settings;
 use Illuminate\Http\Request;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class PaymentMethodsController extends Controller
 {
@@ -82,5 +83,35 @@ class PaymentMethodsController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function paypal_update(Request $request){
+
+
+        $config = [
+            'mode'    => env('PAYPAL_MODE', 'sandbox'),
+            'live' => [
+                'client_id'         => $request->p_client,
+                'client_secret'     => $request->p_secret,
+                'app_id'            => $request->app_id,
+            ],
+
+            'payment_action' => 'Sale',
+            'currency'       => 'USD',
+            'notify_url'     => 'https://your-app.com/paypal/notify',
+            'locale'         => 'en_US',
+            'validate_ssl'   => true,
+        ];
+        $provider = new PayPalClient;
+
+
+        $provider->setApiCredentials($config);
+        $access_token  = $provider->getAccessToken();
+
+        $setting = Settings::first();
+        $setting->update($request->except('_token'));
+        $setting->update(['p_access_token' => $access_token]);
+
+        return back();
     }
 }

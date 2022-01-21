@@ -106,6 +106,7 @@ final class Versions
   'ramsey/collection' => '1.1.3@28a5c4ab2f5111db6a60b2b4ec84057e0f43b9c1',
   'ramsey/uuid' => '4.1.1@cd4032040a750077205918c86049aa0f43d22947',
   'spatie/laravel-permission' => '4.2.0@a6e4122b65094baba7f98df153af0768ef910c85',
+  'srmklive/paypal' => '3.0.12@b5fa002f3e69dbdab49c601a1b1a87b1e7ac279a',
   'swiftmailer/swiftmailer' => 'v6.2.7@15f7faf8508e04471f666633addacf54c0ab5933',
   'symfony/console' => 'v5.3.2@649730483885ff2ca99ca0560ef0e5f6b03f2ac1',
   'symfony/css-selector' => 'v5.3.0@fcd0b29a7a0b1bb5bfbedc6231583d77fea04814',

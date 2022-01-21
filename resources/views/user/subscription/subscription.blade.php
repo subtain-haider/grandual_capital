@@ -56,7 +56,7 @@
                                             <a class="btn btn-success  " >Current Subscription</a>
                                         @else
                                         @if($settings->p_status)
-                                            <a  target="_blank" href="/paypal_modal/{{$subscription->id}}" class="btn btn-primary mt-3">Paypal</a>
+                                            <a href="/paypal_modal/{{$subscription->id}}" class="btn btn-primary mt-3">Paypal</a>
 {{--                                            <a href="/user/subscribe/{{$user->id}}/{{$subscription->id}}" class="btn btn-primary mt-3">Paypal ${{$subscription->price}}</a>--}}
                                         @endif
                                         @if($settings->s_status)

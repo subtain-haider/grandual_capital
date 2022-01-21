@@ -140,7 +140,8 @@ class UserSubscriptionController extends Controller
         $accounts = Account::all();
         account_key_file($accounts);
 
-        return back()->with('success', 'Subscription bought successfully.');
+        return redirect('user/subscription');
+
     }
 
     public function subscription_success(Request $request)

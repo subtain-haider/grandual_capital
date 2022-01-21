@@ -78,11 +78,13 @@ Route::get('/billing-portal', function (Request $request) {
 });
 
 Route::get('/paypal_modal/{subscription_id}', [\App\Http\Controllers\SubscriptionController::class, 'paypal_modal'])->name('paypal_modal');
+Route::post('/paypal_modal_success', [\App\Http\Controllers\SubscriptionController::class, 'paypal_modal_success'])->name('paypal_modal_success');
 Route::post('/checkout_session', [\App\Http\Controllers\HomeController::class, 'checkoutsession'])->name('checkoutsession');
 Route::get('/subscription_success', [\App\Http\Controllers\HomeController::class, 'subscription_success'])->name('subscription_success');
 
 Route::post('bitcoin_success', [HomeController::class, 'bitcoin_success'])->name('bitcoin_success');
 Route::post('setting_update', [HomeController::class, 'setting_update'])->name('setting_update');
+Route::post('paypal_update', [PaymentMethodsController::class, 'paypal_update'])->name('setting_update');
 
 Route::get('handle-payment/{sub}', [PayPalPaymentController::class, 'handlePayment'])->name('make.payment');
 Route::get('handle-payment/{sub}', [PayPalPaymentController::class, 'handlePayment'])->name('make.payment');

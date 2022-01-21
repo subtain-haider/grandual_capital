@@ -26,7 +26,7 @@
                                               <div class="card card-full">
                                                   <div class="nk-ecwg nk-ecwg8 h-100">
                                                       <div class="card-inner ml-1 mr-1 my-1">
-                                                        <form id="TypeValidation" class="form-horizontal" action="/setting_update" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+                                                        <form id="TypeValidation" class="form-horizontal" action="/paypal_update" method="POST" enctype="multipart/form-data" novalidate="novalidate">
                                                           @csrf
                                                               <div class="row">
                                                                   <div class="form-group col-md-12">
@@ -39,6 +39,12 @@
                                                                       <label class="form-label" >Secret Key</label>
                                                                       <div class="form-control-wrap">
                                                                           <input  class="form-control" type="text" name="p_secret" value="{{$setting->p_secret}}" required="true" aria-required="true" aria-invalid="false"> 
+                                                                      </div>
+                                                                  </div>
+                                                                  <div class="form-group col-md-12">
+                                                                      <label class="form-label" >App ID</label>
+                                                                      <div class="form-control-wrap">
+                                                                          <input  class="form-control" type="text" name="app_id" value="{{$setting->app_id}}" required="true" aria-required="true" aria-invalid="false">
                                                                       </div>
                                                                   </div>
                                                                       <div class="form-group col-md-12">

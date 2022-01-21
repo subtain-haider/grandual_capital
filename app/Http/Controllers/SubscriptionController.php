@@ -162,6 +162,12 @@ class SubscriptionController extends Controller
         $subscription = Subscription::find($subscription_id);
         $p_subscription = $subscription->p_subscription;
         $setting = Settings::first();
-        return view('admin.subscription.paypal',compact('p_subscription', 'setting'));
+        return view('admin.subscription.paypal',compact('p_subscription', 'setting', 'subscription_id'));
+    }
+
+    public function paypal_modal_success(Request $request){
+        $user = \Auth::user();
+        $user->update(['paypal_subscription_id' => $request->paypal_subscription_id]);
+        return redirect('/user/subscribe/'.$user->id.'/'.$request->subscription_id);
     }
 }

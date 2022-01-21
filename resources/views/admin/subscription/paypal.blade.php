@@ -34,7 +34,6 @@
                     window.location.href = "/user/subscription";
                 }
             });
-            alert(); // You can add optional success message for the subscriber here
         }
     }).render('#paypal-button-container-{{$p_subscription}}'); // Renders the PayPal button
 </script>

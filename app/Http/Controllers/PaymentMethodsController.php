@@ -93,7 +93,7 @@ class PaymentMethodsController extends Controller
             'live' => [
                 'client_id'         => $request->p_client,
                 'client_secret'     => $request->p_secret,
-                'app_id'            => $request->app_id,
+                'app_id'            => '',
             ],
 
             'payment_action' => 'Sale',
@@ -108,9 +108,10 @@ class PaymentMethodsController extends Controller
         $provider->setApiCredentials($config);
         $access_token  = $provider->getAccessToken();
 
+        $data = json_decode($access_token);
         $setting = Settings::first();
         $setting->update($request->except('_token'));
-        $setting->update(['p_access_token' => $access_token]);
+        $setting->update(['p_access_token' => $data->access_token]);
 
         return back();
     }

@@ -8,6 +8,7 @@ use App\Http\Controllers\API\PasswordResetController;
 use App\Http\Controllers\API\RoleAPIController;
 use App\Http\Controllers\API\SocialAuthAPIController;
 use App\Http\Controllers\API\UserAPIController;
+use App\Models\Account;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,19 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('/paypal', function (Request $request) {
+    $data = json_decode($request->getContent());
+    if ($data->event_type == 'BILLING.SUBSCRIPTION.CANCELLED' || $data->event_type == 'BILLING.SUBSCRIPTION.SUSPENDED' || $data->event_type == 'BILLING.SUBSCRIPTION.EXPIRED'){
+        $paypal_subscription_id = $data->resource->id;
+        $user = \App\Models\User::where('paypal_subscription_id',$paypal_subscription_id )->first();
+        $user->accounts()->delete();
+        $user->update(['paypal_subscription_id' => null, 'expires_at' => null, 'p_subscription_id' => null]);
+
+        $accounts = Account::all();
+        account_key_file($accounts);
+    }
+    return true;
+});
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

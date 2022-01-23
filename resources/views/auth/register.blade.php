@@ -67,12 +67,10 @@
 
                         </div>
                         <div class="mb-3">
-                            <label class="" for="">Signature:</label>
-                            <br/>
-                            <div id="sig" ></div>
-                            <br/>
-                            <button id="clear" class="btn btn-danger btn-sm">Clear Signature</button>
-                            <textarea id="signature64" name="signed" style="display: none"></textarea>
+                            <canvas id="signature" width="450" height="150" style="border: 1px solid #ddd;"></canvas>
+                            <br>
+                            <button id="clear-signature" type="button" class="btn btn-danger btn-sm">Clear Signature</button>
+
                         </div>
                         <div class="mb-3 form-check">
                             <input type="checkbox" required> <label class="form-check-label" for="exampleCheck1">I agree to <a target="_blank" href="{{route('terms')}}"><u>Terms and Conditions</u></a></label>

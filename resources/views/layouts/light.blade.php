@@ -14,12 +14,6 @@
     <link rel="stylesheet" type="text/css" href="{{url('/front/light')}}/css/color.css">
     <link rel="stylesheet" type="text/css" href="{{url('/front/light')}}/css/responsive.css">
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="http://keith-wood.name/js/jquery.signature.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="https://keith-wood.name/css/jquery.signature.css">
     <style>
         .kbw-signature { width: 100%; height: 200px;}
         #sig canvas{
@@ -42,13 +36,18 @@
 @include('includes.header')
 
 @yield('content')
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
 <script type="text/javascript">
-    var sig = $('#sig').signature({syncField: '#signature64', syncFormat: 'PNG'});
-    $('#clear').click(function(e) {
-        e.preventDefault();
-        sig.signature('clear');
-        $("#signature64").val('');
+    jQuery(document).ready(function($){
+
+        var canvas = document.getElementById("signature");
+        var signaturePad = new SignaturePad(canvas);
+
+        $('#clear-signature').on('click', function(){
+            signaturePad.clear();
+        });
+
     });
 </script>
 

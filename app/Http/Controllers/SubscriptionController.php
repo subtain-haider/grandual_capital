@@ -6,6 +6,7 @@ use App\Models\Account;
 use App\Models\Settings;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class SubscriptionController extends Controller
 {
@@ -167,10 +168,12 @@ class SubscriptionController extends Controller
 
     public function paypal_modal_success(Request $request){
         $user = \Auth::user();
-        $provider = \PayPal::setProvider();
+        $provider = new PayPalClient;
         $provider->getAccessToken();
 //        $subscription = $provider->showSubscriptionDetails('I-D8E70YDT6K0B');
-        $provider->cancelSubscription($user->paypal_subscription_id, 'Cancelling');
+        if ($user->paypal_subscription_id) {
+            $provider->cancelSubscription($user->paypal_subscription_id, 'Cancelling');
+        }
 
         $user->update(['paypal_subscription_id' => $request->paypal_subscription_id]);
         return redirect('/user/subscribe/'.$user->id.'/'.$request->subscription_id);

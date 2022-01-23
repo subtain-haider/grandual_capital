@@ -354,7 +354,10 @@ function user_subscribe_helper($user_id, $subscription_id){
     ]);
 //        $user->accounts()->delete();
     $subscription_accounts = $subscription->account;
-    $user_accounts = count($user->accounts()->where('subscription_id',$user->p_subscription_id)->get());
+    $user_accounts = 0;
+    if ($user->p_subscription_id){
+        $user_accounts = count($user->accounts()->where('subscription_id',$user->p_subscription_id)->get());
+    }
     if ($user_accounts < $subscription_accounts){
         $difference = $subscription_accounts - $user_accounts ;
         for ($x=1; $x<=$difference; $x++){

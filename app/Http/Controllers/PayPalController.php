@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Srmklive\PayPal\Services\ExpressCheckout;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 
 class PayPalController extends Controller
 {
@@ -74,7 +75,7 @@ class PayPalController extends Controller
     }
 
     public function paypal_test(){
-        $provider = \PayPal::setProvider();
+        $provider = new PayPalClient;
         $provider->getAccessToken();
         $subscription = $provider->showSubscriptionDetails('I-D8E70YDT6K0B');
 //        $subscription = $provider->cancelSubscription('I-D8E70YDT6K0B', 'Cancelling it manually');

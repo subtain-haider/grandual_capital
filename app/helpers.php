@@ -348,31 +348,32 @@ function user_subscribe_helper($user_id, $subscription_id){
 
     $expires_at = Carbon::now()->addMonths($subscription->name);
 
-    $user->update([
-        'p_subscription_id' => $subscription_id,
-        'expires_at' => $expires_at->format('Y.m.d')
-    ]);
+
 //        $user->accounts()->delete();
     $subscription_accounts = $subscription->account;
     $user_accounts = 0;
     if ($user->p_subscription_id){
         $user_accounts = count($user->accounts()->where('subscription_id',$user->p_subscription_id)->get());
     }
+
     if ($user_accounts < $subscription_accounts){
         $difference = $subscription_accounts - $user_accounts ;
         for ($x=1; $x<=$difference; $x++){
             $user->accounts()->create([
                 'number' => $x,
-                'subscription_id' => $user->p_subscription_id
+                'subscription_id' => $subscription_id
             ]);
         }
     }elseif ($user_accounts > $subscription_accounts){
-        $del_accounts = $user->accounts->slice($subscription_accounts);
+        $del_accounts = $user->accounts->where('subscription_id',$user->p_subscription_id)->slice($subscription_accounts);
         foreach ($del_accounts as $del){
             $del->delete();
         }
     }
-
+    $user->update([
+        'p_subscription_id' => $subscription_id,
+        'expires_at' => $expires_at->format('Y.m.d')
+    ]);
 
     $accounts = Account::all();
     account_key_file($accounts);

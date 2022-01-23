@@ -26,7 +26,7 @@
                                               <div class="card card-full">
                                                   <div class="nk-ecwg nk-ecwg8 h-100">
                                                       <div class="card-inner ml-1 mr-1 my-1">
-                                                        <form id="TypeValidation" class="form-horizontal" action="/paypal_update" method="POST" enctype="multipart/form-data" novalidate="novalidate">
+                                                        <form id="TypeValidation" class="form-horizontal" action="/setting_update" method="POST" enctype="multipart/form-data" novalidate="novalidate">
                                                           @csrf
                                                               <div class="row">
                                                                   <div class="form-group col-md-12">
@@ -41,10 +41,22 @@
                                                                           <input  class="form-control" type="text" name="p_secret" value="{{$setting->p_secret}}" required="true" aria-required="true" aria-invalid="false"> 
                                                                       </div>
                                                                   </div>
+{{--                                                                  <div class="form-group col-md-12">--}}
+{{--                                                                      <label class="form-label" >App ID</label>--}}
+{{--                                                                      <div class="form-control-wrap">--}}
+{{--                                                                          <input  class="form-control" type="text" name="app_id" value="{{$setting->app_id}}" required="true" aria-required="true" aria-invalid="false">--}}
+{{--                                                                      </div>--}}
+{{--                                                                  </div>--}}
                                                                   <div class="form-group col-md-12">
-                                                                      <label class="form-label" >App ID</label>
-                                                                      <div class="form-control-wrap">
-                                                                          <input  class="form-control" type="text" name="app_id" value="{{$setting->app_id}}" required="true" aria-required="true" aria-invalid="false">
+                                                                      <label class="form-label" for="default-06">Payment Mode</label>
+                                                                      <div class="form-control-wrap ">
+                                                                          <div class="form-control-select">
+                                                                              <select class="form-control" data-style="btn btn-rose btn-round" title="Single Select" name="p_mode" required>
+                                                                                  <option disabled selected>Select Status</option>
+                                                                                  <option value="sandbox" @if($setting->p_mode == 'sandbox') selected @endif >Sandbox</option>
+                                                                                  <option value="live" @if($setting->p_mode == 'live') selected @endif>Live</option>
+                                                                              </select>
+                                                                          </div>
                                                                       </div>
                                                                   </div>
                                                                       <div class="form-group col-md-12">

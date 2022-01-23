@@ -85,34 +85,34 @@ class PaymentMethodsController extends Controller
         //
     }
 
-    public function paypal_update(Request $request){
-
-
-        $config = [
-            'mode'    => env('PAYPAL_MODE', 'sandbox'),
-            'live' => [
-                'client_id'         => $request->p_client,
-                'client_secret'     => $request->p_secret,
-                'app_id'            => '',
-            ],
-
-            'payment_action' => 'Sale',
-            'currency'       => 'USD',
-            'notify_url'     => 'https://your-app.com/paypal/notify',
-            'locale'         => 'en_US',
-            'validate_ssl'   => true,
-        ];
-        $provider = new PayPalClient;
-
-
-        $provider->setApiCredentials($config);
-        $access_token  = $provider->getAccessToken();
-
-        $data = json_decode($access_token);
-        $setting = Settings::first();
-        $setting->update($request->except('_token'));
-        $setting->update(['p_access_token' => $data->access_token]);
-
-        return back();
-    }
+//    public function paypal_update(Request $request){
+//
+//
+//        $config = [
+//            'mode'    => env('PAYPAL_MODE', 'sandbox'),
+//            'live' => [
+//                'client_id'         => $request->p_client,
+//                'client_secret'     => $request->p_secret,
+//                'app_id'            => '',
+//            ],
+//
+//            'payment_action' => 'Sale',
+//            'currency'       => 'USD',
+//            'notify_url'     => 'https://your-app.com/paypal/notify',
+//            'locale'         => 'en_US',
+//            'validate_ssl'   => true,
+//        ];
+//        $provider = new PayPalClient;
+//
+//
+//        $provider->setApiCredentials($config);
+//        $access_token  = $provider->getAccessToken();
+//
+//        $data = json_decode($access_token);
+//        $setting = Settings::first();
+//        $setting->update($request->except('_token'));
+//        $setting->update(['p_access_token' => $data->access_token]);
+//
+//        return back();
+//    }
 }

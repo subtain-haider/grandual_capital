@@ -169,6 +169,27 @@ class SubscriptionController extends Controller
     public function paypal_modal_success(Request $request){
         $user = \Auth::user();
         $provider = new PayPalClient;
+        $settings = Settings::first();
+        $config = [
+            'mode'    => $settings->p_mode, // Can only be 'sandbox' Or 'live'. If empty or invalid, 'live' will be used.
+            'sandbox' => [
+                'client_id'         => $settings->p_client,
+                'client_secret'     => $settings->p_secret,
+                'app_id'            => '',
+            ],
+            'live' => [
+                'client_id'         => $settings->p_client,
+                'client_secret'     => $settings->p_secret,
+                'app_id'            => env('PAYPAL_LIVE_APP_ID', ''),
+            ],
+
+            'payment_action' => 'Sale',
+            'currency'       => 'USD',
+            'notify_url'     => 'https://your-app.com/paypal/notify',
+            'locale'         => 'en_US',
+            'validate_ssl'   => true,
+        ];
+        $provider->setApiCredentials($config);
         $provider->getAccessToken();
 //        $subscription = $provider->showSubscriptionDetails('I-D8E70YDT6K0B');
         if ($user->paypal_subscription_id) {

@@ -353,7 +353,8 @@ function user_subscribe_helper($user_id, $subscription_id){
     $subscription_accounts = $subscription->account;
     $user_accounts = 0;
     if ($user->p_subscription_id){
-        $user_accounts = count($user->accounts()->where('subscription_id',$user->p_subscription_id)->get());
+        $all_accounts = $user->accounts()->where('subscription_id',$user->p_subscription_id)->get();
+        $user_accounts = count($all_accounts);
     }
 
     if ($user_accounts < $subscription_accounts){
@@ -363,6 +364,9 @@ function user_subscribe_helper($user_id, $subscription_id){
                 'number' => $x,
                 'subscription_id' => $subscription_id
             ]);
+        }
+        foreach ($all_accounts as $account){
+            $account->update(['subscription_id' => $subscription]);
         }
     }elseif ($user_accounts > $subscription_accounts){
         $del_accounts = $user->accounts->where('subscription_id',$user->p_subscription_id)->slice($subscription_accounts);

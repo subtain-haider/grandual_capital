@@ -46,9 +46,9 @@
 
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
-    
 
-    
+
+
 
     <script type="application/ld+json">{
 
@@ -90,31 +90,31 @@
 
             position: absolute;
 
-  top: 50%;
+            top: 50%;
 
-  left: 50%;
+            left: 50%;
 
-  min-width: 100%;
+            min-width: 100%;
 
-  min-height: 100%;
+            min-height: 100%;
 
-  width: auto;
+            width: auto;
 
-  height: auto;
+            height: auto;
 
-  z-index: 0;
+            z-index: 0;
 
-  -ms-transform: translateX(-50%) translateY(-50%);
+            -ms-transform: translateX(-50%) translateY(-50%);
 
-  -moz-transform: translateX(-50%) translateY(-50%);
+            -moz-transform: translateX(-50%) translateY(-50%);
 
-  -webkit-transform: translateX(-50%) translateY(-50%);
+            -webkit-transform: translateX(-50%) translateY(-50%);
 
-  transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
 
-}
+        }
 
-#pricing-tables {
+        #pricing-tables {
 
             background-color: #eeeeee;
 
@@ -524,19 +524,19 @@
 
             </div>
 
-{{--            <div class="soft-m-language">--}}
+            {{--            <div class="soft-m-language">--}}
 
-{{--                <select>--}}
+            {{--                <select>--}}
 
-{{--                    <option value="#">Eng</option>--}}
+            {{--                    <option value="#">Eng</option>--}}
 
-{{--                    <option value="#">ESP</option>--}}
+            {{--                    <option value="#">ESP</option>--}}
 
-{{--                    <option value="#">ARB</option>--}}
+            {{--                    <option value="#">ARB</option>--}}
 
-{{--                </select>--}}
+            {{--                </select>--}}
 
-{{--            </div>--}}
+            {{--            </div>--}}
 
             <div class="soft-m-main-menu-item float-right">
 
@@ -558,9 +558,9 @@
 
                         @if(empty($user))
 
-                        <li><a class="nav-link" target="_blank" href="/login">Login</a> </li>
+                            <li><a class="nav-link" target="_blank" href="/login">Login</a> </li>
 
-                        <li><a class="nav-link" target="_blank" href="/register">Register</a> </li>
+                            <li><a class="nav-link" target="_blank" href="/register">Register</a> </li>
 
                         @else
 
@@ -592,11 +592,11 @@
 
                 </nav>
 
-{{--                <div class="soft-m-side-bar-toggle soft-m-side-toggle-btn float-right">--}}
+                {{--                <div class="soft-m-side-bar-toggle soft-m-side-toggle-btn float-right">--}}
 
-{{--                    <i class="flaticon-menu"></i>--}}
+                {{--                    <i class="flaticon-menu"></i>--}}
 
-{{--                </div>--}}
+                {{--                </div>--}}
 
                 <div class="soft-m-header-btn text-center text-capitalize soft-m-side-toggle-btn float-right">
 
@@ -622,45 +622,45 @@
 
                     <p>
 
-            Grandeur Capital was founded in July 2021. Grandeur Capital (GC) is where novice traders become full-time traders. We at GC have built a community by traders, 
+                        Grandeur Capital was founded in July 2021. Grandeur Capital (GC) is where novice traders become full-time traders. We at GC have built a community by traders,
 
-			for traders. We have partnered with major leaders/brands in the foreign exchange, stock, and binary options markets. Our products have been tested by the best 
+                        for traders. We have partnered with major leaders/brands in the foreign exchange, stock, and binary options markets. Our products have been tested by the best
 
-			traders in the market. Also, it is used daily by all owners of GC.  Our main objective is to provide traders a safe community to communicate, to learn, 
+                        traders in the market. Also, it is used daily by all owners of GC.  Our main objective is to provide traders a safe community to communicate, to learn,
 
-			and most importantly, to earn! 
+                        and most importantly, to earn!
 
                     </p>
 
                     <div class="side_contact">
 
-{{--                        <div class="soft-m-sidebar-gallary clearfix ul-li">--}}
+                        {{--                        <div class="soft-m-sidebar-gallary clearfix ul-li">--}}
 
-{{--                            <h3> Our Gallery</h3>--}}
+                        {{--                            <h3> Our Gallery</h3>--}}
 
-{{--                            <ul>--}}
+                        {{--                            <ul>--}}
 
-{{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
+                        {{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
 
-{{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
+                        {{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
 
-{{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
+                        {{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
 
-{{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
+                        {{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
 
-{{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
+                        {{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
 
-{{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
+                        {{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
 
-{{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
+                        {{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
 
-{{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
+                        {{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
 
-{{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
+                        {{--                                <li><a href="#"><img src="{{url('/')}}/front_assets/img/soft/blog/br1.jpg" alt=""></a></li>--}}
 
-{{--                            </ul>--}}
+                        {{--                            </ul>--}}
 
-{{--                        </div>--}}
+                        {{--                        </div>--}}
 
                         <div class="social_widget ul-li soft-m-headline relative-position">
 
@@ -682,7 +682,7 @@
 
                         <div class="side_copywright text-center">
 
-                           <b> <a target="_blank" href="http://oseiweb.com/"></a> </b>
+                            <b> <a target="_blank" href="http://oseiweb.com/"></a> </b>
 
                         </div>
 
@@ -698,7 +698,7 @@
 
         <div class="soft-m-mobile_menu position-relative">
 
-            <div class="soft-m-mobile_menu_button soft-m-open_mobile_menu">
+            <div class="soft-m-mobile_menu_button soft-m-open_mobile_menu" style="margin-top:-45px">
 
                 <i class="fas fa-bars"></i>
 
@@ -732,11 +732,15 @@
 
                             <li><a class="nav-link" href="#soft-m-feature-process">Process</a></li>
 
-                            <li><a class="nav-link" href="#soft-m-intregration">Intregration </a></li>
+                            <li><a class="nav-link" href="#soft-m-intregration">Integration </a></li>
+                            <li><a class="nav-link" href="#soft-m-prices">Price </a></li>
+                            <li><a class="nav-link" href="/forums">Forums</a></li>
+                            <li><a class="nav-link" href="/login">Login</a></li>
+                            <li><a class="nav-link" href="/register">Register</a></li>
 
-                            <li><a class="nav-link" href="#soft-m-platform">Platform</a></li>
+                            <!--<li><a class="nav-link" href="#soft-m-platform">Platform</a></li>-->
 
-                            <li><a class="nav-link" href="#soft-m-blog">Blog</a> </li>
+                            <!--<li><a class="nav-link" href="#soft-m-blog">Blog</a> </li>-->
 
                         </ul>
 
@@ -766,11 +770,11 @@
 
 <section id="soft-m-banner" class="soft-m-banner-section" >
 
-      <video playsinline="playsinline" autoplay="autoplay" muted="muted" id="myVideo" loop="loop" style="overflow-x: hidden">
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" id="myVideo" loop="loop" style="overflow: hidden;">
 
         <source src="{{url('/')}}/GC<?php echo rand(1,6); ?>.mp4" type="video/mp4">
 
-      </video>
+    </video>
 
     <div class="container">
 
@@ -780,29 +784,29 @@
 
             <span></span>
 
-{{--            <div class="soft-m-banner-subscribe-form">--}}
+            {{--            <div class="soft-m-banner-subscribe-form">--}}
 
-{{--                <form action="#">--}}
+            {{--                <form action="#">--}}
 
-{{--                    <div class="soft-m-subs position-relative">--}}
+            {{--                    <div class="soft-m-subs position-relative">--}}
 
-{{--                        <input type="email" name="email" placeholder="Enter email address.">--}}
+            {{--                        <input type="email" name="email" placeholder="Enter email address.">--}}
 
-{{--                    </div>--}}
+            {{--                    </div>--}}
 
-{{--                    <button>Get Started Now</button>--}}
+            {{--                    <button>Get Started Now</button>--}}
 
-{{--                    <div class="soft-m-moto">--}}
+            {{--                    <div class="soft-m-moto">--}}
 
-{{--                        <span>Free Forever</span>--}}
+            {{--                        <span>Free Forever</span>--}}
 
-{{--                        <span>No Credit Card</span>--}}
+            {{--                        <span>No Credit Card</span>--}}
 
-{{--                    </div>--}}
+            {{--                    </div>--}}
 
-{{--                </form>--}}
+            {{--                </form>--}}
 
-{{--            </div>--}}
+            {{--            </div>--}}
 
         </div>
 
@@ -814,121 +818,119 @@
 
     ============================================= -->
 
-    <!-- start of new count section
+<!-- start of new count section
 
-    ============================================= -->
+============================================= -->
 
-    <section style="padding: 15px; margin-top:300px">
+<section style="padding: 15px; margin-top:300px">
 
-        <div class="container">
+    <div class="container">
 
-            <div class="row">
+        <div class="row">
 
-                <br/>
+            <br/>
 
-    {{--            <div class="col text-center">--}}
+            {{--            <div class="col text-center">--}}
 
-    {{--                <h2>Bootstrap 4 counter</h2>--}}
+            {{--                <h2>Bootstrap 4 counter</h2>--}}
 
-    {{--                <p>counter to count up to a target number</p>--}}
+            {{--                <p>counter to count up to a target number</p>--}}
 
-    {{--            </div>--}}
+            {{--            </div>--}}
 
-            </div>
+        </div>
 
-            <div class="row text-center">
+        <div class="row text-center">
 
-                <div class="col">
+            <div class="col">
 
-                    <div class="counter">
+                <div class="counter">
 
-                        <div class="soft-m-inner-icon" style="filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.1));">
+                    <div class="soft-m-inner-icon" style="filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.1));">
 
-                            <div class="soft-m-feature-icon text-center" style="width: 85px;  margin: auto; height: 95px; line-height: 100px; background-color: #fff; position: relative;  z-index: 1;  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
+                        <div class="soft-m-feature-icon text-center" style="width: 85px;  margin: auto; height: 95px; line-height: 100px; background-color: #fff; position: relative;  z-index: 1;  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
 
                             <i class="fas fa-users fa-2x" style="background: linear-gradient(90deg, #102465 0%, #00acf0 100%);  -webkit-background-clip: text;
 
                             -webkit-text-fill-color: transparent;"></i>
 
-                            </div>
-
                         </div>
-
-                        <h2 class="timer count-title count-number pt-2" style="color: #102465;" data-to="1700" data-speed="1500">1700</h2>
-
-                        <p class="count-text " style=" color: #1970cc;">Users</p>
 
                     </div>
 
+                    <h2 class="timer count-title count-number pt-2" style="color: #102465;" data-to="1700" data-speed="1500">1700</h2>
+
+                    <p class="count-text " style=" color: #1970cc;">Users</p>
+
                 </div>
 
-                <div class="col">
+            </div>
 
-                    <div class="counter">
+            <div class="col">
 
-                        <div class="soft-m-inner-icon" style="filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.1));">
+                <div class="counter">
 
-                            <div class="soft-m-feature-icon text-center" style="width: 85px;  margin: auto; height: 95px; line-height: 100px; background-color: #fff; position: relative;  z-index: 1;  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
+                    <div class="soft-m-inner-icon" style="filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.1));">
+
+                        <div class="soft-m-feature-icon text-center" style="width: 85px;  margin: auto; height: 95px; line-height: 100px; background-color: #fff; position: relative;  z-index: 1;  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
 
                             <i class="fas fa-download fa-2x" style="background: linear-gradient(90deg, #102465 0%, #00acf0 100%);  -webkit-background-clip: text;
 
                             -webkit-text-fill-color: transparent;"></i>
 
-                            </div>
-
                         </div>
-
-                        <h2 class="timer count-title count-number pt-2" style="color: #102465;" data-to="1700" data-speed="1500">100</h2>
-
-                        <p class="count-text " style=" color: #1970cc;">Download</p>
 
                     </div>
 
+                    <h2 class="timer count-title count-number pt-2" style="color: #102465;" data-to="1700" data-speed="1500">100</h2>
+
+                    <p class="count-text " style=" color: #1970cc;">Download</p>
+
                 </div>
 
-                <div class="col">
+            </div>
 
-                    <div class="counter">
+            <div class="col">
 
-                        <div class="soft-m-inner-icon" style="filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.1));">
+                <div class="counter">
 
-                            <div class="soft-m-feature-icon text-center" style="width: 85px;  margin: auto; height: 95px; line-height: 100px; background-color: #fff; position: relative;  z-index: 1;  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
+                    <div class="soft-m-inner-icon" style="filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.1));">
+
+                        <div class="soft-m-feature-icon text-center" style="width: 85px;  margin: auto; height: 95px; line-height: 100px; background-color: #fff; position: relative;  z-index: 1;  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
 
                             <i class="far fa-thumbs-up fa-2x"  style="background: linear-gradient(90deg, #102465 0%, #00acf0 100%);  -webkit-background-clip: text;
 
                             -webkit-text-fill-color: transparent;"></i>
 
-                            </div>
-
                         </div>
 
-                        <h2 class="timer count-title count-number pt-2" style="color: #102465;" data-to="1700" data-speed="1500">11,900</h2>
+                    </div>
 
-                        <p class="count-text " style=" color: #1970cc;">Likes</p>
+                    <h2 class="timer count-title count-number pt-2" style="color: #102465;" data-to="1700" data-speed="1500">11,900</h2>
 
-                    </div></div>
+                    <p class="count-text " style=" color: #1970cc;">Likes</p>
 
-                <div class="col">
+                </div></div>
 
-                    <div class="counter">
+            <div class="col">
 
-                        <div class="soft-m-inner-icon" style="filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.1));">
+                <div class="counter">
 
-                            <div class="soft-m-feature-icon text-center" style="width: 85px;  margin: auto; height: 95px; line-height: 100px; background-color: #fff; position: relative;  z-index: 1;  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
+                    <div class="soft-m-inner-icon" style="filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.1));">
+
+                        <div class="soft-m-feature-icon text-center" style="width: 85px;  margin: auto; height: 95px; line-height: 100px; background-color: #fff; position: relative;  z-index: 1;  -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);">
 
                             <i class="fas fa-star fa-2x" style="background: linear-gradient(90deg, #102465 0%, #00acf0 100%);  -webkit-background-clip: text;
 
                             -webkit-text-fill-color: transparent;"></i>
 
-                            </div>
-
                         </div>
 
-                        <h2 class="timer count-title count-number pt-2" style="color: #102465;" data-to="1700" data-speed="1500">157</h2>
-
-                        <p class="count-text " style=" color: #1970cc;">5 star Rating</p>
-
                     </div>
+
+                    <h2 class="timer count-title count-number pt-2" style="color: #102465;" data-to="1700" data-speed="1500">157</h2>
+
+                    <p class="count-text " style=" color: #1970cc;">5 star Rating</p>
 
                 </div>
 
@@ -936,7 +938,9 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 <!-- End of new count section
 
@@ -1222,7 +1226,7 @@
 
                         <div class="soft-m-ft-process-img text-center wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
 
-                           <img src="{{url('/')}}/experince01.gif" alt="">
+                            <img src="{{url('/')}}/experince01.gif" alt="">
 
                         </div>
 
@@ -1234,7 +1238,7 @@
 
                             <div class="soft-m-section-title position-relative soft-m-headline">
 
-                                
+
 
                                 <h2>Over Twenty Years of Collective Trading Experience</h2>
 
@@ -1270,7 +1274,7 @@
 
                             <div class="soft-m-section-title position-relative soft-m-headline">
 
-                                
+
 
                                 <h2>Risk Management</h2>
 
@@ -1332,7 +1336,7 @@
 
                             <div class="soft-m-feature-details">
 
-                                We offer a document library with educational and training resources designed to generate new trading ideas and help you continually improve your skills. 
+                                We offer a document library with educational and training resources designed to generate new trading ideas and help you continually improve your skills.
 
                             </div>
 
@@ -1566,7 +1570,7 @@
 
 <!-- pricing table  -->
 
- <section id="pricing-tables">
+<section id="pricing-tables">
 
     <div class="container">
 
@@ -1590,39 +1594,39 @@
 
                 {{-- <div class="col-md-3 col-sm-6 col-xs-12 color-{{$loop->index + 1}}"> --}}
 
-                    <div class="col-md-3 col-sm-6 col-xs-12 " style=" margin: 0px 5px" >
+                <div class="col-md-3 col-sm-6 col-xs-12 " style=" margin: 0px 5px" >
 
-                        <div class="single-table text-center">
+                    <div class="single-table text-center">
 
-                            <div class="plan-header" style="background-color: white !important">
+                        <div class="plan-header" style="background-color: white !important">
 
-                                <h3 style="color: #102465;">{{$subscription->text}}</h3>
+                            <h3 style="color: #102465;">{{$subscription->text}}</h3>
 
-                                <h4 class="plan-price" style="padding: 0 !important; color: black">${{$subscription->r_fee}}</h4>
+                            <h4 class="plan-price" style="padding: 0 !important; color: black">${{$subscription->r_fee}}</h4>
 
-                                <p style="color: black !important;">Starting Month: ${{$subscription->price}}</p>
+                            <p style="color: black !important;">Starting Month: ${{$subscription->price}}</p>
 
-{{--                                <p style="color: #1970cc;">{{$subscription->desc}}</p>--}}
+                            {{--                                <p style="color: #1970cc;">{{$subscription->desc}}</p>--}}
 
-                                <img src="{{$subscription->image}}" >
+                            <img src="{{$subscription->image}}" >
 
-                                <p class="mt-2" style="color: black">Monthly Subscription</p>
+                            <p class="mt-2" style="color: black">Monthly Subscription</p>
 
-                                <p style="color: black">{{$subscription->account}} Accounts</p>
+                            <p style="color: black">{{$subscription->account}} Accounts</p>
 
-                                <p style="color: black">Full Access</p>
+                            <p style="color: black">Full Access</p>
 
-                                @if($subscription->affiliate == 'Yes')
+                            @if($subscription->affiliate == 'Yes')
 
-                                    <p style="color: black"> Reoccuring ${{\App\Models\Affiliation::first()->percentage}}/mo Per</p>
+                                <p style="color: black"> Reoccuring ${{\App\Models\Affiliation::first()->percentage}}/mo Per</p>
 
-                                    <p style="color: black"> Person Affiliate Payout </p>
+                                <p style="color: black"> Person Affiliate Payout </p>
 
-                                @endif
+                            @endif
 
 
 
-                            </div>
+                        </div>
 
 
 
@@ -2020,7 +2024,7 @@
 
                         </div>
 
-                  <!--      <div class="col-md-6">
+                    <!--      <div class="col-md-6">
 
                             <div class="soft-call-icon-text text-center" data-tilt data-tilt-max="10">
 
@@ -2063,48 +2067,50 @@
     ============================================= -->
 
 <section id="soft-m-footer" class="soft-m-footer-section">
-<!--
-    <div class="soft-m-footer-top">
+    <!--
+        <div class="soft-m-footer-top">
 
-        <div class="container">
+            <div class="container">
 
-            <div class="soft-m-footer-top-content">
+                <div class="soft-m-footer-top-content">
 
-                <div class="row">
+                    <div class="row">
 
-                    <div class="col-lg-6">
+                        <div class="col-lg-6">
 
-                        <div class="soft-m-footer-contact">
+                            <div class="soft-m-footer-contact">
 
-                            <span>Connect With Us</span>
+                                <span>Connect With Us</span>
 
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
 
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
 
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                <a href="#"><i class="fab fa-youtube"></i></a>
 
-                            <a href="#"><i class="fab fa-behance"></i></a>
+                                <a href="#"><i class="fab fa-behance"></i></a>
+
+                            </div>
 
                         </div>
 
-                    </div>
+                        <div class="col-lg-6">
 
-                    <div class="col-lg-6">
+                            <div class="soft-m-footer-top-menu ul-li">
 
-                        <div class="soft-m-footer-top-menu ul-li">
+                                <ul>
 
-                            <ul>
+                                    <li><a href="#">Comapny</a></li>
 
-                                <li><a href="#">Comapny</a></li>
+                                    <li><a href="#">Team Members</a></li>
 
-                                <li><a href="#">Team Members</a></li>
+                                    <li><a href="#">Careers</a></li>
 
-                                <li><a href="#">Careers</a></li>
+                                    <li><a href="#">Help & FAQs</a></li>
 
-                                <li><a href="#">Help & FAQs</a></li>
+                                </ul>
 
-                            </ul>
+                            </div>
 
                         </div>
 
@@ -2115,9 +2121,7 @@
             </div>
 
         </div>
-
-    </div>
--->
+    -->
     <div class="soft-m-footer-top">
 
         <div class="container">
@@ -2160,35 +2164,35 @@
 
                             <div class="soft-m-logo-widget pera-content">
 
-                     <div class="soft-m-footer-support d-inline-block position-relative">
+                                <div class="soft-m-footer-support d-inline-block position-relative">
 
-					 <a href="#"><img src="{{url('/')}}/front_assets/img/soft/logo/logo1.png" width="97" height="32" alt="logo"></a>
+                                    <a href="#"><img src="{{url('/')}}/front_assets/img/soft/logo/logo1.png" width="97" height="32" alt="logo"></a>
 
-                            &copy; 2022 All Rights Reserved <b> <a target="_blank" href="http://grandeurcapital.net/">Grandeur Capital</a> </b>
+                                    &copy; 2022 All Rights Reserved <b> <a target="_blank" href="http://grandeurcapital.net/">Grandeur Capital</a> </b>
 
-						<div class="soft-m-footer-contact">
+                                    <div class="soft-m-footer-contact">
 
-                            <span>Connect With Us</span>
+                                        <span>Connect With Us</span>
 
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
 
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
 
-                            <a href="#"><i class="fab fa-youtube"></i></a>
+                                        <a href="#"><i class="fab fa-youtube"></i></a>
 
-                            <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
 
-                        </div>
+                                    </div>
 
-                      </div>
+                                </div>
 
-{{--                                <p>--}}
+                            {{--                                <p>--}}
 
-{{--                                    Free <a href="#">soft-m</a>system for your sales team with all the essential tools sales funnel, pipeline management, sales reports, <a href="#">360-degree</a> customer view, support for repeat sales--}}
+                            {{--                                    Free <a href="#">soft-m</a>system for your sales team with all the essential tools sales funnel, pipeline management, sales reports, <a href="#">360-degree</a> customer view, support for repeat sales--}}
 
-{{--                                </p>--}}
+                            {{--                                </p>--}}
 
-                             <!--   <div class="soft-footer-btn text-center">
+                            <!--   <div class="soft-footer-btn text-center">
 
                                     <a href="#"><i class="fas fa-desktop"></i> Try A Demo</a>
 
@@ -2206,17 +2210,17 @@
 
                             <div class="soft-m-footer-menu-widget ul-li-block">
 
-                                <h3 class="widget-title">Grandeur Capital</h3> 
+                                <h3 class="widget-title">Grandeur Capital</h3>
 
                                 <ul>
 
                                     <li><a href="#">About Us</a></li>
 
-									<li><a href="#">Sign Up</a></li>
+                                    <li><a href="#">Sign Up</a></li>
 
-									<li><a href="#">GC Group Chat</a></li>
+                                    <li><a href="#">GC Group Chat</a></li>
 
-									<li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Contact Us</a></li>
 
                                 </ul>
 
@@ -2228,13 +2232,13 @@
 
                             <div class="soft-m-footer-menu-widget ul-li-block">
 
-                               <h3 class="widget-title">Terms & Policy</h3>
+                                <h3 class="widget-title">Terms & Policy</h3>
 
                                 <ul>
 
                                     <li><a href="{{route('terms')}}">Terms of Service</a></li>
 
-									<li><a href="{{route('privacy')}}">Privacy Policy</a></li>
+                                    <li><a href="{{route('privacy')}}">Privacy Policy</a></li>
 
                                 </ul>
 

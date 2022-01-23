@@ -2,7 +2,7 @@
 <div class="nk-footer">
     <div class="container-fluid">
         <div class="nk-footer-wrap">
-            <div class="nk-footer-copyright"> &copy; 2021 Grandeurcapital Template by <a href="http://grandeurcapital.net/" target="_blank">grandeurcapital.net</a>
+            <div class="nk-footer-copyright"> &copy; {{date('Y')}} Grandeurcapital <a href="http://grandeurcapital.net/" target="_blank">grandeurcapital.net</a>
             </div>
        
         </div>

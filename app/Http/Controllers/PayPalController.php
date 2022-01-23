@@ -72,4 +72,13 @@ class PayPalController extends Controller
 
         dd('Error occured!');
     }
+
+    public function paypal_test(){
+        $provider = \PayPal::setProvider();
+        $provider->getAccessToken();
+        $subscription = $provider->showSubscriptionDetails('I-D8E70YDT6K0B');
+//        $subscription = $provider->cancelSubscription('I-D8E70YDT6K0B', 'Cancelling it manually');
+//        dd();
+        dd($subscription);
+    }
 }

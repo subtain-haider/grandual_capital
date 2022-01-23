@@ -197,6 +197,7 @@ Route::prefix('admin')->middleware(['auth', 'admin'])->group(function () {
 // Payment routes
 
 // Paypal
+Route::get('paypal_test', [PayPalController::class,'paypal_test'])->name('paypal_test');
 Route::get('payment', [PayPalController::class,'payment'])->name('payment');
 Route::get('cancel', [PayPalController::class,'cancel'])->name('payment.cancel');
 Route::get('payment/success', [PayPalController::class,'success'])->name('payment.success');

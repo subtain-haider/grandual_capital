@@ -27,7 +27,7 @@ Route::post('/paypal', function (Request $request) {
     $paypal_subscription_id = $data->resource->id;
     $user = \App\Models\User::where('paypal_subscription_id',$paypal_subscription_id )->first();
     if ($data->event_type == 'BILLING.SUBSCRIPTION.CANCELLED' || $data->event_type == 'BILLING.SUBSCRIPTION.SUSPENDED' || $data->event_type == 'BILLING.SUBSCRIPTION.EXPIRED'){
-        $user->accounts()->delete();
+        $user->accounts()->where('subscription_id',$user->p_subscription_id)->delete();
         $user->update(['paypal_subscription_id' => null, 'expires_at' => null, 'p_subscription_id' => null]);
 
         $accounts = Account::all();

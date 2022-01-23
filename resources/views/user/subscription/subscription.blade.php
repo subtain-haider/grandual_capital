@@ -17,7 +17,7 @@
                         </div><!-- .nk-block-head-content -->
                     </div><!-- .nk-block-between -->
                 </div><!-- .nk-block-head -->
-                
+
                 <div class="nk-block nk-block-lg">
                     <div class="nk-block-head">
                         <div class="nk-block-between g-3">
@@ -56,7 +56,7 @@
                                             <a class="btn btn-success  " >Current Subscription</a>
                                         @else
                                         @if($settings->p_status)
-                                            <a href="/paypal_modal/{{$subscription->id}}" class="btn btn-primary mt-3">Paypal</a>
+                                            <a href="/paypal_modal/{{$subscription->id}}" class="btn btn-primary mt-3">Paypal ${{$subscription->price}}</a>
 {{--                                            <a href="/user/subscribe/{{$user->id}}/{{$subscription->id}}" class="btn btn-primary mt-3">Paypal ${{$subscription->price}}</a>--}}
                                         @endif
                                         @if($settings->s_status)
@@ -78,7 +78,7 @@
                         </div><!-- .col -->
 
                         @endforeach
-                        
+
                     </div>
                 </div><!-- .nk-block -->
 

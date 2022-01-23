@@ -167,6 +167,11 @@ class SubscriptionController extends Controller
 
     public function paypal_modal_success(Request $request){
         $user = \Auth::user();
+        $provider = \PayPal::setProvider();
+        $provider->getAccessToken();
+//        $subscription = $provider->showSubscriptionDetails('I-D8E70YDT6K0B');
+        $provider->cancelSubscription($user->paypal_subscription_id, 'Cancelling');
+
         $user->update(['paypal_subscription_id' => $request->paypal_subscription_id]);
         return redirect('/user/subscribe/'.$user->id.'/'.$request->subscription_id);
     }

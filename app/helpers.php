@@ -1,9 +1,13 @@
 <?php
 
+use App\Models\Account;
+use App\Models\Affiliation;
 use App\Models\Conversation;
 use App\Models\Setting;
+use App\Models\Subscription;
 use App\Models\User;
 use App\Repositories\NotificationRepository;
+use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\UrlGenerator;
 
@@ -319,4 +323,54 @@ function account_key_file($accounts){
     $myfile = fopen(public_path('/')."/accountDetail.key", "w") or die("Unable to open file!");
     fwrite($myfile, $txt);
     fclose($myfile);
+}
+
+function user_subscribe_helper($user_id, $subscription_id){
+    $user = User::find($user_id);
+    $subscription = Subscription::find($subscription_id);
+    $affiliation = Affiliation::first();
+
+    $a_user = User::where('ref_id', $user->ref_by )->first();
+    $a_user_sub = $a_user->subscription_id;
+    // return $a_user_sub_check;
+    if ($a_user_sub){
+        $a_user_sub_check = Subscription::find($a_user_sub);
+        $a_user_sub_A = $a_user_sub_check ->affiliate;
+        if ($a_user_sub_A == "Yes") {
+            $amount = ($subscription->price * $affiliation->percentage) / 100;
+            $amount = $a_user->a_cash + $amount;
+            $a_user->update([
+                'a_cash' => $amount,
+            ]);
+        }
+    }
+
+
+    $expires_at = Carbon::now()->addMonths($subscription->name);
+
+    $user->update([
+        'p_subscription_id' => $subscription_id,
+        'expires_at' => $expires_at->format('Y.m.d')
+    ]);
+//        $user->accounts()->delete();
+    $subscription_accounts = $subscription->account;
+    $user_accounts = count($user->accounts);
+    if ($user_accounts < $subscription_accounts){
+        $difference = $subscription_accounts - $user_accounts ;
+        for ($x=1; $x<=$difference; $x++){
+            $user->accounts()->create([
+                'number' => $x,
+                'subscription_id' => $user->p_subscription_id
+            ]);
+        }
+    }elseif ($user_accounts > $subscription_accounts){
+        $del_accounts = $user->accounts->slice($subscription_accounts);
+        foreach ($del_accounts as $del){
+            $del->delete();
+        }
+    }
+
+
+    $accounts = Account::all();
+    account_key_file($accounts);
 }

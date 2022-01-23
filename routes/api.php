@@ -24,14 +24,18 @@ use Illuminate\Support\Facades\Route;
 */
 Route::post('/paypal', function (Request $request) {
     $data = json_decode($request->getContent());
+    $paypal_subscription_id = $data->resource->id;
+    $user = \App\Models\User::where('paypal_subscription_id',$paypal_subscription_id )->first();
     if ($data->event_type == 'BILLING.SUBSCRIPTION.CANCELLED' || $data->event_type == 'BILLING.SUBSCRIPTION.SUSPENDED' || $data->event_type == 'BILLING.SUBSCRIPTION.EXPIRED'){
-        $paypal_subscription_id = $data->resource->id;
-        $user = \App\Models\User::where('paypal_subscription_id',$paypal_subscription_id )->first();
         $user->accounts()->delete();
         $user->update(['paypal_subscription_id' => null, 'expires_at' => null, 'p_subscription_id' => null]);
 
         $accounts = Account::all();
         account_key_file($accounts);
+    }elseif ($data->event_type == 'BILLING.SUBSCRIPTION.RE-ACTIVATED' || $data->event_type == 'BILLING.SUBSCRIPTION.RENEWED' || $data->event_type == 'BILLING.SUBSCRIPTION.UPDATED'){
+        $user_id = $user->id;
+        $subscription_id = $user->p_subscription_id;
+        user_subscribe_helper($user_id, $subscription_id);
     }
     return true;
 });

@@ -54,7 +54,7 @@ $user = \Illuminate\Support\Facades\Auth::user()
                                             <td class="nk-tb-col">
                                                 <a href="/product/{{$product->id}}"  class="btn btn-primary btn-sm edit-shop-btn">View</a>
 
-                                                @if(empty($user->subscription))
+                                                @if(empty($user->p_subscription_id))
                                                     <a href="/user/subscription" class="btn btn-danger btn-sm delete-shop-btn" style="color: white">Purchase</a>
                                                 @else
                                                     <a href="{{url('/') . '/' .$product->file}}" target="_blank" class="btn btn-danger btn-sm">Download</a>

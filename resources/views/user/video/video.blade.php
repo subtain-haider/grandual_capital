@@ -64,7 +64,7 @@ $user = Auth::user();
                                       <div class="row">
 
                                       @foreach($category->videos as $video)
-                                              <div class="col-3">
+                                              <div class="col-12 col-md-3">
                                                   <div class="card">
                                                       <div class="card-body">
                                                           <video width="320" height="240" controls controlsList="nodownload">

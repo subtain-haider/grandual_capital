@@ -167,6 +167,8 @@
                 // location.reload();
                 return false;
             });
+        console.log('done')
+        location.reload();
     }
 
     CryptoChill.setup({

@@ -48,14 +48,20 @@
 {{--                                                        </div>--}}
 {{--                                                    </div>--}}
 
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-4">
                                                         <label class="form-label" >Email </label>
                                                         <div class="form-control-wrap">
                                                             <input type="email" class="form-control" required name="email" value="{{$user->email}}">
                                                         </div>
                                                     </div>
+                                                    <div class="form-group col-md-4">
+                                                        <label class="form-label" >Full Name </label>
+                                                        <div class="form-control-wrap">
+                                                            <input type="text" class="form-control" required name="full_name" value="{{$user->full_name}}">
+                                                        </div>
+                                                    </div>
             
-                                                    <div class="form-group col-md-6">
+                                                    <div class="form-group col-md-4">
                                                         <label class="form-label">Name</label>
                                                         <div class="form-control-wrap">
                                                             <input  class="form-control" type="text" name="name" class="form-control" required value="{{$user->name}}"> 

@@ -163,12 +163,12 @@
                 data: data,
             },
             function(data, status){
-                // console.log('done')
-                // location.reload();
-                return false;
+                console.log('done')
+                location.reload();
+                return true;
             });
-        console.log('done')
-        location.reload();
+        // console.log('done')
+        // location.reload();
     }
 
     CryptoChill.setup({

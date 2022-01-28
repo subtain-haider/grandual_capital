@@ -14,7 +14,7 @@
           <i class="fa fa-lock closed-group-badge" data-toggle="tooltip" data-placement="top"
                                title="The admin only can send messages into the group."> </i>
           {{/if}}
-          {{if privacy === 2}}
+          {{if !removed_from_group && my_role === 2}}
           <i class="fa fa-shield private-group-badge" data-toggle="tooltip" data-placement="top"
                                title="The admin only can add or remove members from the group."> </i>
         {{/if}}
@@ -122,7 +122,6 @@
     <div class="chat-profile__column pb-0">
         <a href="#" class='btn btn-primary btn-add-members' data-group-id="{{:id}}">Add Members</a>
     </div>
-    {{else privacy === 1 && !removed_from_group}}
     <div class="chat-profile__column pb-0">
         <a href="#" class='btn btn-primary btn-add-members' data-group-id="{{:id}}"><?php echo trans('messages.chats.add_members')?></a>
    </div>
@@ -132,8 +131,8 @@
        <a href="#" class='btn btn-danger btn-delete-group' data-group-id="{{:id}}"><?php echo trans('messages.group.delete_group') ?></a>
     </div>
     {{else !removed_from_group}}
-    <div class="chat-profile__column pt-1">
-       <a href="#" class='btn btn-danger btn-leave-from-group' data-group-id="{{:id}}"><?php echo trans('messages.group.leave_group') ?></a>
-    </div>
+<!--    <div class="chat-profile__column pt-1">-->
+<!--       <a href="#" class='btn btn-danger btn-leave-from-group' data-group-id="{{:id}}">--><?php //echo trans('messages.group.leave_group') ?><!--</a>-->
+<!--    </div>-->
     {{/if}}
 </script>

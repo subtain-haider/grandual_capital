@@ -23,19 +23,19 @@
             <div class="chat__person-box-msg-time">
                 <div class="chat__person-box-time">{{:~getLocalDate(contact.created_at)}}</div>
                 <div class="chat__person-box-count {{if contact.unread_count <= 0}} d-none {{/if}}">{{:contact.unread_count}}</div>
-                <div class="dropdown">
-                    <div class="chat-item-menu text-right pr-2" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-ellipsis-v hide-ele text-logo-color"></i>
-                    </div>
-                   <div class="dropdown-menu dropdown-menu-right more-btn-conversation-item">
-                       <a class="dropdown-item text-center chat__person-box-delete more-delete-option">
-                            <?php echo __('messages.chats.delete') ?>
-                        </a>
-                        <a class="dropdown-item text-center chat__person-box-archive">
-                            <?php echo __('messages.chats.archive_chat') ?>
-                        </a>
-                   </div>
-                </div>
+<!--                <div class="dropdown">-->
+<!--                    <div class="chat-item-menu text-right pr-2" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">-->
+<!--                    <i class="fa fa-ellipsis-v hide-ele text-logo-color"></i>-->
+<!--                    </div>-->
+<!--                   <div class="dropdown-menu dropdown-menu-right more-btn-conversation-item">-->
+<!--                       <a class="dropdown-item text-center chat__person-box-delete more-delete-option">-->
+<!--                            --><?php //echo __('messages.chats.delete') ?>
+<!--                        </a>-->
+<!--                        <a class="dropdown-item text-center chat__person-box-archive">-->
+<!--                            --><?php //echo __('messages.chats.archive_chat') ?>
+<!--                        </a>-->
+<!--                   </div>-->
+<!--                </div>-->
             </div>
         </div>
     </div>

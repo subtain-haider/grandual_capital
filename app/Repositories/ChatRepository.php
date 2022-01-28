@@ -12,6 +12,7 @@ use App\Models\Conversation;
 use App\Models\Group;
 use App\Models\GroupMessageRecipient;
 use App\Models\MessageAction;
+use App\Models\Role;
 use App\Models\User;
 use App\Traits\ImageTrait;
 use Auth;
@@ -226,6 +227,11 @@ class ChatRepository extends BaseRepository
         $message = $input['message'];
 
         if ($num_found = preg_match_all($pattern, $message, $out)) {
+            $user = User::find(getLoggedInUserId());
+            $isSuperAdmin = $user->hasRole(Role::ADMIN_ROLE_NAME);
+            if (!$isSuperAdmin){
+                throw new UnprocessableEntityHttpException('Cant send links in messages.');
+            }
             $link = $out[0];
             try {
                 $info = Embed::create($link[0]);

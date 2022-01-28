@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Group;
 use App\Models\Role;
 use App\Models\User;
 use App\Repositories\AccountRepository;
+use App\Repositories\GroupRepository;
 use App\Repositories\UserRepository;
 use App\Rules\NoSpaceContaine;
 use Exception;
@@ -36,6 +38,8 @@ class RegisterController extends Controller
     public $accountRepo;
     /** @var UserRepository */
     private $userRepository;
+    /** @var GroupRepository */
+    private $groupRepository;
 
     /**
      * Where to redirect users after registration.
@@ -50,8 +54,9 @@ class RegisterController extends Controller
      * @param  AccountRepository  $accountRepository
      * @param  UserRepository  $userRepo
      */
-    public function __construct(AccountRepository $accountRepository, UserRepository $userRepo)
+    public function __construct(AccountRepository $accountRepository, UserRepository $userRepo, GroupRepository $groupRepo)
     {
+        $this->groupRepository = $groupRepo;
         $this->accountRepo = $accountRepository;
         $this->userRepository = $userRepo;
         $this->middleware('guest');
@@ -95,6 +100,11 @@ class RegisterController extends Controller
 
         $this->userRepository->assignRoles($user, ['role_id' => Role::MEMBER_ROLE]);
         $activateCode = $this->accountRepo->generateUserActivationToken($user->id);
+        $groups = Group::where('privacy',1)->get();
+        foreach ($groups as $group){
+            $users[] = $user->id;
+            $this->groupRepository->addMembersToGroup($group, $users, false);
+        }
 //        $this->accountRepo->sendConfirmEmail($user->name, $user->email, $activateCode);
 
         return $user;

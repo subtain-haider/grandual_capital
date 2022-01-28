@@ -80,8 +80,12 @@ class GroupRepository extends BaseRepository
             /** @var Group $group */
             $group = Group::create($input);
 
-            $users = $input['users'];
-            $users[] = getLoggedInUserId();
+            if ($input['privacy'] == 1){
+                $users = User::pluck('id')->toArray();
+            }else{
+                $users = $input['users'];
+                $users[] = getLoggedInUserId();
+            }
             $this->addMembersToGroup($group, $users, false);
 
             $userIds = $group->fresh()->users->pluck('id')->toArray();
@@ -180,7 +184,7 @@ class GroupRepository extends BaseRepository
             GroupUser::create([
                 'user_id'  => $user->id,
                 'group_id' => $group->id,
-                'added_by' => getLoggedInUserId(),
+                'added_by' => getLoggedInUserId() ?? 1,
                 'role'     => $group->created_by == $user->id ? GroupUser::ROLE_ADMIN : GroupUser::ROLE_MEMBER,
             ]);
 

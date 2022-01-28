@@ -65,13 +65,17 @@
                                     {!! Form::radio('privacy', 1, true, ['class' => 'group-privacy', 'id' => 'groupPublic']) !!} {{ __('messages.group.public') }}
                                     <i class="fa fa-question-circle ml-2 question-type-public cursor-pointer"
                                        data-toggle="tooltip" data-placement="top"
-                                       title="All group members can add or remove members from the group."></i>
+{{--                                       title="All group members can add or remove members from the group."--}}
+                                       title="All existing and new members will be added in this group automatically."
+                                    ></i>
                                 </div>
                                 <div>
                                     {!! Form::radio('privacy', 2, false, ['class' => 'group-privacy', 'id' => 'groupPrivate']) !!} {{ __('messages.group.private') }}
                                     <i class="fa fa-question-circle ml-2  question-type-private cursor-pointer"
                                        data-toggle="tooltip" data-placement="top"
-                                       title="The admin only can add or remove members from the group."></i>
+{{--                                       title="The admin only can add or remove members from the group."--}}
+                                       title="Admin have to choose members to add."
+                                    ></i>
                                 </div>
                             </div>
                         </div>

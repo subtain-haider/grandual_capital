@@ -48,7 +48,7 @@ class HomeController extends Controller
     public function adminHome()
     {
         $users = count(User::where('is_admin','!=',1)->get());
-        $subscriptions = count(Subscription::all());
+        $subscriptions = Subscription::all();
         $affiliations = count(Affiliation::all());
         return view('adminhome',compact('users','subscriptions','affiliations'));
     }

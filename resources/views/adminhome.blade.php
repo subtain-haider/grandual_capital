@@ -68,7 +68,7 @@
                                       </div>
                                       <div class="data">
                                           <div class="data-group">
-                                              <div class="amount"> Total: {{$subscriptions}}</div>
+                                              <div class="amount"> Total: {{count($subscriptions)}}</div>
                                               <div class="nk-ecwg6-ck" style="height:90px !important">
                                                   <div class="preview-icon-wrap">
                                                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 113.9">
@@ -100,6 +100,129 @@
                           </div><!-- .card -->
                       </div><!-- .col -->
                   </div><!-- .row -->
+              </div><!-- .nk-block -->
+
+
+              <div class="nk-block-head nk-block-head-sm">
+                  <div class="nk-block-between">
+                      <div class="nk-block-head-content">
+                          <h3 class="nk-block-title page-title">This Month Subscriptions</h3>
+                      </div><!-- .nk-block-head-content -->
+                  </div><!-- .nk-block-between -->
+              </div><!-- .nk-block-head -->
+              <div class="nk-block">
+                  <div class="row g-gs">
+                      @foreach($subscriptions as $subscription)
+                      <div class="col-xxl-3 col-sm-6">
+                          <div class="card">
+                              <div class="nk-ecwg nk-ecwg6">
+                                  <div class="card-inner">
+                                      <div class="card-title-group">
+                                          <div class="card-title">
+                                              <h6 class="title">{{$subscription->text}}</h6>
+                                          </div>
+                                      </div>
+                                      <div class="data">
+                                          <div class="data-group">
+                                              @php
+                                                $s_users = \App\Models\User::where('p_subscription_id',$subscription->id)->whereMonth('updated_at', \Carbon\Carbon::now()->month)->count();
+                                              @endphp
+                                              <div class="amount"> Total: {{$s_users}}</div>
+                                              <div class="nk-ecwg6-ck" style="height:90px !important">
+                                                  <div class="preview-icon-wrap">
+                                                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                                          <rect x="5" y="7" width="60" height="56" rx="7" ry="7" fill="#e3e7fe" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
+                                                          <rect x="25" y="27" width="60" height="56" rx="7" ry="7" fill="#e3e7fe" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
+                                                          <rect x="15" y="17" width="60" height="56" rx="7" ry="7" fill="#fff" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
+                                                          <line x1="15" y1="29" x2="75" y2="29" fill="none" stroke="#6576ff" stroke-miterlimit="10" stroke-width="2"></line>
+                                                          <circle cx="53" cy="23" r="2" fill="#c4cefe"></circle>
+                                                          <circle cx="60" cy="23" r="2" fill="#c4cefe"></circle>
+                                                          <circle cx="67" cy="23" r="2" fill="#c4cefe"></circle>
+                                                          <rect x="22" y="39" width="20" height="20" rx="2" ry="2" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
+                                                          <circle cx="32" cy="45.81" r="2" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                                                          <path d="M29,54.31a3,3,0,0,1,6,0" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                          <line x1="49" y1="40" x2="69" y2="40" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                          <line x1="49" y1="51" x2="69" y2="51" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                          <line x1="49" y1="57" x2="59" y2="57" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                          <line x1="64" y1="57" x2="66" y2="57" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                          <line x1="49" y1="46" x2="59" y2="46" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                          <line x1="64" y1="46" x2="66" y2="46" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                      </svg>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                          <!-- <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span></div> -->
+                                      </div>
+                                  </div><!-- .card-inner -->
+                              </div><!-- .nk-ecwg -->
+                          </div><!-- .card -->
+                      </div><!-- .col -->
+                      @endforeach
+                  </div><!-- .row -->
+
+                  <br>
+
+                  <div class="nk-block-head nk-block-head-sm">
+                      <div class="nk-block-between">
+                          <div class="nk-block-head-content">
+                              <h3 class="nk-block-title page-title">Total Subscriptions</h3>
+                          </div><!-- .nk-block-head-content -->
+                      </div><!-- .nk-block-between -->
+                  </div><!-- .nk-block-head -->
+                  <div class="nk-block">
+                      <div class="row g-gs">
+                          @foreach($subscriptions as $subscription)
+                              <div class="col-xxl-3 col-sm-6">
+                                  <div class="card">
+                                      <div class="nk-ecwg nk-ecwg6">
+                                          <div class="card-inner">
+                                              <div class="card-title-group">
+                                                  <div class="card-title">
+                                                      <h6 class="title">{{$subscription->text}}</h6>
+                                                  </div>
+                                              </div>
+                                              <div class="data">
+                                                  <div class="data-group">
+                                                      @php
+                                                          $s_users = \App\Models\User::where('p_subscription_id',$subscription->id)->count();
+                                                      @endphp
+                                                      <div class="amount"> Total: {{$s_users}}</div>
+                                                      <div class="nk-ecwg6-ck" style="height:90px !important">
+                                                          <div class="preview-icon-wrap">
+                                                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80">
+                                                                  <rect x="5" y="7" width="60" height="56" rx="7" ry="7" fill="#e3e7fe" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
+                                                                  <rect x="25" y="27" width="60" height="56" rx="7" ry="7" fill="#e3e7fe" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
+                                                                  <rect x="15" y="17" width="60" height="56" rx="7" ry="7" fill="#fff" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
+                                                                  <line x1="15" y1="29" x2="75" y2="29" fill="none" stroke="#6576ff" stroke-miterlimit="10" stroke-width="2"></line>
+                                                                  <circle cx="53" cy="23" r="2" fill="#c4cefe"></circle>
+                                                                  <circle cx="60" cy="23" r="2" fill="#c4cefe"></circle>
+                                                                  <circle cx="67" cy="23" r="2" fill="#c4cefe"></circle>
+                                                                  <rect x="22" y="39" width="20" height="20" rx="2" ry="2" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></rect>
+                                                                  <circle cx="32" cy="45.81" r="2" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></circle>
+                                                                  <path d="M29,54.31a3,3,0,0,1,6,0" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                                  <line x1="49" y1="40" x2="69" y2="40" fill="none" stroke="#6576ff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                                  <line x1="49" y1="51" x2="69" y2="51" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                                  <line x1="49" y1="57" x2="59" y2="57" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                                  <line x1="64" y1="57" x2="66" y2="57" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                                  <line x1="49" y1="46" x2="59" y2="46" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                                  <line x1="64" y1="46" x2="66" y2="46" fill="none" stroke="#c4cefe" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></line>
+                                                              </svg>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                                  <!-- <div class="info"><span class="change up text-danger"><em class="icon ni ni-arrow-long-up"></em>4.63%</span><span> vs. last week</span></div> -->
+                                              </div>
+                                          </div><!-- .card-inner -->
+                                      </div><!-- .nk-ecwg -->
+                                  </div><!-- .card -->
+                              </div><!-- .col -->
+                          @endforeach
+                      </div><!-- .row -->
+
+
+
+
+
               </div><!-- .nk-block -->
           </div>
       </div>

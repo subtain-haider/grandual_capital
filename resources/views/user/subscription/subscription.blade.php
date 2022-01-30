@@ -157,6 +157,7 @@
 
     function onPaymentSuccess(data, code) {
 
+        console.log(data)
         $.post("{{route('bitcoin_success')}}",
             {
                 _token: $('meta[name="csrf-token"]').attr('content'),

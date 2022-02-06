@@ -10,6 +10,7 @@ use App\Repositories\NotificationRepository;
 use Carbon\Carbon;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Routing\UrlGenerator;
+use Illuminate\Support\Facades\Http;
 
 /**
  * @return int
@@ -381,4 +382,40 @@ function user_subscribe_helper($user_id, $subscription_id){
 
     $accounts = Account::all();
     account_key_file($accounts);
+}
+
+function cryptochill_api_payout($endpoint, $payload = [], $method = 'GET'){
+    $API_URL = 'https://api.cryptochill.com';
+    $API_KEY = env('p_api_key');
+    $API_SECRET = env('p_api_secret');
+
+    $request_path = '/v1/' . $endpoint . '/';
+    $payload['request'] = $request_path;
+    $payload['nonce'] = round(microtime(true) * 10000);
+
+    // Encode payload to base64 format and create signature using your API_SECRET
+    $encoded_payload = json_encode($payload);
+    $b64 = base64_encode($encoded_payload);
+    $signature = hash_hmac('sha256', $b64, $API_SECRET);
+
+    // Add your API key, encoded payload and signature to following headers
+    $request_headers = [
+        'X-CC-KEY' => $API_KEY,
+        'X-CC-PAYLOAD' => $b64,
+        'X-CC-SIGNATURE' => $signature,
+    ];
+
+    $data = [
+        'method' => $method,
+        'url' => $API_URL . $request_path,
+        'headers' => $request_headers
+    ];
+
+    if ($data['method'] == 'GET'){
+        return Http::withHeaders($data['headers'])->get($data['url']);
+    }
+    elseif ($data['method'] == 'POST'){
+        return Http::withHeaders($data['headers'])->post($data['url'], $payload);
+    }
+
 }

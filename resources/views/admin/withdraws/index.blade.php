@@ -45,10 +45,11 @@
                                             <td class="nk-tb-col"><span class="tb-sub"><span class="title">	{{$withdraw->note}}</span></span></td> 
                                             <td class="nk-tb-col">
                                                 @if($withdraw->status == '1')
-                                               <span class="tb-sub"> <span class="tb-status text-success">Approved</span></span></td>
+                                               <span class="tb-sub"> <span class="tb-status text-success">Approved</span></span>
                                                @else
-                                               <span class="tb-sub"><span class="tb-status text-warning">Pending</span></span></td>
+                                               <span class="tb-sub"><span class="tb-status text-warning">Pending</span></span>
                                                @endif
+                                           </td>
                                             <td class="nk-tb-col">
                                                 @if($withdraw->status == '0')
                                                 <a href="/admin/withdraw_approve/{{$withdraw->id}}" class="btn btn-success btn-sm edit-shop-btn">Approve</a>

@@ -47,11 +47,10 @@
                                                         <td class="nk-tb-col"><span class="tb-sub"><span class="title">{{$withdraw->note}}</span></span></td>
                                                         <td class="nk-tb-col">
                                                             @if($withdraw->status == '1')
-                                                            <span class="tb-sub"> <span class="tb-status text-success">Approved</span></span></td>
-                                                @else
-                                                <span class="tb-sub"> <span class="tb-status text-danger">Rejected</span></span></td>
-                                                @endif
-                                                            {{-- <span class="tb-sub"> <span class="tb-status text-success">Approved</span></span></td> --}}
+                                                                <span class="tb-sub"> <span class="tb-status text-success">Approved</span></span>
+                                                            @else
+                                                                <span class="tb-sub"><span class="tb-status text-warning">Pending</span></span>
+                                                            @endif
                                                         </td>
                                                      </tr> 
                                                      @endforeach

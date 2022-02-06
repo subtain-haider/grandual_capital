@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Front;
 use App\Models\Withdraw;
 use App\Models\WithdrawType;
 use Illuminate\Http\Request;
@@ -37,6 +38,31 @@ class WithdrawController extends Controller
     }
     public function withdraw_approve($id){
         $withdraw = Withdraw::find($id);
+        if($withdraw->type == 'Bitcoin'){
+            $res = [
+                'amount' => $withdraw->amount,
+                'currency' => 'USD',
+                'address' => $withdraw->account,
+                'notes' => $withdraw->note,
+            ];
+            $payload = [
+                'profile_id' => env('p_profile_id'),
+                'network_fee_preset' => 'high',
+                'recipients' =>
+                    [$res]
+
+            ];
+            $response = cryptochill_api_payout('payouts', $payload, 'POST');
+            if(!$response->failed()){
+                $withdraw->update([
+                    'status' => 1
+                ]);
+            }else{
+                $front = Front::first();
+                $front->update(['who_header' => $response]);
+            }
+            return back();
+        }
         $withdraw->update([
             'status' => 1
         ]);

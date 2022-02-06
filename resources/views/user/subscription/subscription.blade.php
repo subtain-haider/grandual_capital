@@ -67,7 +67,7 @@
                                                 data-amount="{{$subscription->price}}"
                                                 data-currency="USD"
                                                 data-product="{{$subscription->name}} Months"
-                                                data-passthrough="{{$subscription->id}}"
+                                                data-passthrough="{{$subscription->id}}, {{$user->id}}"
                                                 data-show-payment-url="true"
                                         >Bitcoin ${{$subscription->price}} </button>
                                     @endif
@@ -155,22 +155,22 @@
 <script src="https://static.cryptochill.com/static/js/sdk.js"></script>
 <script>
 
-    function onPaymentSuccess(data, code) {
+    {{--function onPaymentSuccess(data, code) {--}}
 
-        console.log(data)
-        $.post("{{route('bitcoin_success')}}",
-            {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                data: data,
-            },
-            function(data, status){
-                console.log('done')
-                location.reload();
-                return true;
-            });
-        // console.log('done')
-        // location.reload();
-    }
+    {{--    console.log(data)--}}
+    {{--    $.post("{{route('bitcoin_success')}}",--}}
+    {{--        {--}}
+    {{--            _token: $('meta[name="csrf-token"]').attr('content'),--}}
+    {{--            data: data,--}}
+    {{--        },--}}
+    {{--        function(data, status){--}}
+    {{--            console.log('done')--}}
+    {{--            location.reload();--}}
+    {{--            return true;--}}
+    {{--        });--}}
+    {{--    // console.log('done')--}}
+    {{--    // location.reload();--}}
+    {{--}--}}
 
     CryptoChill.setup({
         account: "{{\App\Models\Settings::first()->b_client}}",
@@ -178,7 +178,7 @@
 
         // Event callbacks
         // onOpen: onPaymentOpen,
-        onSuccess: onPaymentSuccess,
+        // onSuccess: onPaymentSuccess,
         // onCancel: onPaymentCancel
     })
 </script>

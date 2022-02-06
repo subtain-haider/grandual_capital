@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+Route::post('/callback/cryptochill', [App\Http\Controllers\CryptochillController::class, 'cryptochill'])->name('cryptochill');
+Route::post('/callback/cryptochill/payout', [App\Http\Controllers\CryptochillController::class, 'cryptochill_payout'])->name('cryptochill_payout');
 Route::post('/paypal', function (Request $request) {
     $data = json_decode($request->getContent());
     $paypal_subscription_id = $data->resource->id;
